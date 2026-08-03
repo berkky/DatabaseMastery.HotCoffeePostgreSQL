@@ -9,5 +9,8 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
         Task CreateReservationAsync(CreateReservationDto createReservationDto);
         Task UpdateReservationAsync(UpdateReservationDto updateReservationDto);
         Task DeleteReservationAsync(int id);
+        Task ChangeReservationStatusToPending(int id);
+        Task ChangeReservationStatusToApproval(int id);
+        Task ChangeReservationStatusToCancel(int id);
     }
 }

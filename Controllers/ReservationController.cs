@@ -1,4 +1,3 @@
-using DatabaseMastery.HotCoffeePostgreSQL.Context;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices;
 using Microsoft.AspNetCore.Mvc;
@@ -8,12 +7,10 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
     public class ReservationController : Controller
     {
         private readonly IReservationService _reservationService;
-        private readonly AppDbContext _context;
 
-        public ReservationController(IReservationService reservationService, AppDbContext context)
+        public ReservationController(IReservationService reservationService)
         {
             _reservationService = reservationService;
-            _context = context;
         }
 
         public async Task<IActionResult> ReservationList()
@@ -105,46 +102,19 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
 
         public async Task<IActionResult> ApproveReservation(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(id);
-
-            if (reservation == null)
-            {
-                return RedirectToAction(nameof(ReservationList));
-            }
-
-            reservation.Status = "Onaylandı";
-            await _context.SaveChangesAsync();
-
+            await _reservationService.ChangeReservationStatusToApproval(id);
             return RedirectToAction(nameof(ReservationList));
         }
 
         public async Task<IActionResult> PendingReservation(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(id);
-
-            if (reservation == null)
-            {
-                return RedirectToAction(nameof(ReservationList));
-            }
-
-            reservation.Status = "Beklemede";
-            await _context.SaveChangesAsync();
-
+            await _reservationService.ChangeReservationStatusToPending(id);
             return RedirectToAction(nameof(ReservationList));
         }
 
         public async Task<IActionResult> CancelReservation(int id)
         {
-            var reservation = await _context.Reservations.FindAsync(id);
-
-            if (reservation == null)
-            {
-                return RedirectToAction(nameof(ReservationList));
-            }
-
-            reservation.Status = "İptal Edildi";
-            await _context.SaveChangesAsync();
-
+            await _reservationService.ChangeReservationStatusToCancel(id);
             return RedirectToAction(nameof(ReservationList));
         }
     }

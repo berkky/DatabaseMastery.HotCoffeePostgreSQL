@@ -74,5 +74,44 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
             _context.Reservations.Remove(value);
             await _context.SaveChangesAsync();
         }
+
+        public async Task ChangeReservationStatusToPending(int id)
+        {
+            var reservation = await _context.Reservations.FindAsync(id);
+
+            if (reservation == null)
+            {
+                return;
+            }
+
+            reservation.Status = "Beklemede";
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task ChangeReservationStatusToApproval(int id)
+        {
+            var reservation = await _context.Reservations.FindAsync(id);
+
+            if (reservation == null)
+            {
+                return;
+            }
+
+            reservation.Status = "Onaylandı";
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task ChangeReservationStatusToCancel(int id)
+        {
+            var reservation = await _context.Reservations.FindAsync(id);
+
+            if (reservation == null)
+            {
+                return;
+            }
+
+            reservation.Status = "İptal Edildi";
+            await _context.SaveChangesAsync();
+        }
     }
 }

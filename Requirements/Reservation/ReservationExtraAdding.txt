@@ -1,0 +1,39 @@
+﻿.btn-act.approve { background: var(--green-soft); color: #16a34a; border-color: rgba(34,197,94,0.22); }
+.btn-act.approve:hover { background: var(--green); color: #fff; border-color: var(--green); transform: scale(1.1); box-shadow: 0 3px 10px rgba(34,197,94,0.32); }
+
+.btn-act.pending { background: var(--yellow-soft); color: #b45309; border-color: rgba(245,158,11,0.22); }
+.btn-act.pending:hover { background: var(--yellow); color: #fff; border-color: var(--yellow); transform: scale(1.1); box-shadow: 0 3px 10px rgba(245,158,11,0.32); }
+
+.btn-act.cancel { background: #fff7ed; color: #ea580c; border-color: #fed7aa; }
+.btn-act.cancel:hover { background: #ea580c; color: #fff; border-color: #ea580c; transform: scale(1.1); box-shadow: 0 3px 10px rgba(234,88,12,0.32); }
+
+-----------------------------------------
+
+<td class="col-act">
+    <div class="act-group">
+        <a href="/Reservation/UpdateReservation/@r.ReservationId"
+           class="btn-act edit" data-tip="Düzenle">
+            <i class="bi bi-pencil-fill"></i>
+        </a>
+
+        <a href="/Reservation/ApproveReservation/@r.ReservationId"
+           class="btn-act approve" data-tip="Onayla">
+            <i class="bi bi-check-lg"></i>
+        </a>
+
+        <a href="/Reservation/PendingReservation/@r.ReservationId"
+           class="btn-act pending" data-tip="Beklet">
+            <i class="bi bi-hourglass-split"></i>
+        </a>
+
+        <a href="/Reservation/CancelReservation/@r.ReservationId"
+           class="btn-act cancel" data-tip="İptal Et">
+            <i class="bi bi-x-lg"></i>
+        </a>
+
+        <button class="btn-act del" data-tip="Sil"
+                onclick="confirmDelete(@r.ReservationId, '@r.Name')">
+            <i class="bi bi-trash3-fill"></i>
+        </button>
+    </div>
+</td>
