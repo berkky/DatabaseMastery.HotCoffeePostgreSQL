@@ -1,0 +1,29 @@
+﻿INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Başlangıçlar','/images/categories/starters.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Ana Yemekler','/images/categories/maincourses.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Salatalar','/images/categories/salads.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Çorbalar','/images/categories/soups.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Makarnalar','/images/categories/pastas.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Pizza','/images/categories/pizza.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Izgara & Et Yemekleri','/images/categories/grill.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Tatlılar','/images/categories/desserts.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('İçecekler','/images/categories/drinks.png',true);
+
+INSERT INTO "Categories" ("CategoryName","CategoryImageUrl","CategoryStatus")
+VALUES ('Kahve & Çay','/images/categories/coffee.png',true);

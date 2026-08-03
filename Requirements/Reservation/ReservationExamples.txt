@@ -1,0 +1,149 @@
+﻿INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Ahmet Demir','+90 532 111 22 33','ahmet.demir@example.com','2026-03-10','18:30:00',2,'Pending','Sessiz bir masa tercih ediyor.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Ayşe Kaya','+90 532 222 33 44','ayse.kaya@example.com','2026-03-10','19:00:00',4,'Confirmed','Doğum günü kutlaması.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Mehmet Yıldız','+90 533 333 44 55','mehmet.yildiz@example.com','2026-03-11','20:00:00',3,'Pending','Pencere kenarı masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Fatma Şahin','+90 534 444 55 66','fatma.sahin@example.com','2026-03-11','18:45:00',2,'Confirmed','Sessiz bir köşe.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Mustafa Çelik','+90 535 555 66 77','mustafa.celik@example.com','2026-03-12','19:15:00',5,'Pending','Aile yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Elif Arslan','+90 536 666 77 88','elif.arslan@example.com','2026-03-12','20:30:00',2,'Confirmed','Romantik masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Hakan Kurt','+90 537 777 88 99','hakan.kurt@example.com','2026-03-13','18:00:00',4,'Pending','İş yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Zeynep Koç','+90 538 888 99 00','zeynep.koc@example.com','2026-03-13','21:00:00',3,'Confirmed','Geç saat rezervasyonu.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Emre Aydın','+90 539 111 22 44','emre.aydin@example.com','2026-03-14','19:30:00',2,'Pending','Pencere kenarı.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Merve Özkan','+90 531 222 33 55','merve.ozkan@example.com','2026-03-14','20:15:00',4,'Confirmed','Arkadaş buluşması.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Ali Güneş','+90 532 333 44 66','ali.gunes@example.com','2026-03-15','18:30:00',2,'Pending','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Selin Yalçın','+90 533 444 55 77','selin.yalcin@example.com','2026-03-15','19:45:00',3,'Confirmed','Özel gün.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Burak Karaca','+90 534 555 66 88','burak.karaca@example.com','2026-03-16','20:00:00',6,'Pending','Kalabalık grup.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Deniz Aksoy','+90 535 666 77 99','deniz.aksoy@example.com','2026-03-16','18:15:00',2,'Confirmed','Erken rezervasyon.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Okan Tekin','+90 536 777 88 11','okan.tekin@example.com','2026-03-17','19:30:00',4,'Pending','İş görüşmesi.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Gamze Kılıç','+90 537 888 99 22','gamze.kilic@example.com','2026-03-17','20:45:00',2,'Confirmed','Romantik akşam.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Tolga Şimşek','+90 538 999 11 33','tolga.simsek@example.com','2026-03-18','18:50:00',3,'Pending','Orta masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Ebru Acar','+90 539 123 45 67','ebru.acar@example.com','2026-03-18','19:20:00',5,'Confirmed','Aile yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Serkan Polat','+90 531 234 56 78','serkan.polat@example.com','2026-03-19','20:10:00',2,'Pending','Pencere kenarı.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Buse Karataş','+90 532 345 67 89','buse.karatas@example.com','2026-03-19','21:00:00',3,'Confirmed','Arkadaş yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Kaan Bozkurt','+90 533 456 78 90','kaan.bozkurt@example.com','2026-03-20','18:40:00',2,'Pending','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Seda Doğan','+90 534 567 89 01','seda.dogan@example.com','2026-03-20','19:50:00',4,'Confirmed','Doğum günü.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Onur Keskin','+90 535 678 90 12','onur.keskin@example.com','2026-03-21','20:20:00',3,'Pending','Standart masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Derya Öz','+90 536 789 01 23','derya.oz@example.com','2026-03-21','18:30:00',2,'Confirmed','Erken rezervasyon.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Cem Tuncer','+90 537 890 12 34','cem.tuncer@example.com','2026-03-22','19:10:00',4,'Pending','Aile buluşması.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Aslı Çetin','+90 538 901 23 45','asli.cetin@example.com','2026-03-22','20:30:00',2,'Confirmed','Romantik masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Yusuf Özdemir','+90 539 012 34 56','yusuf.ozdemir@example.com','2026-03-23','19:00:00',5,'Pending','Grup rezervasyonu.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Pelin Sarı','+90 531 123 45 66','pelin.sari@example.com','2026-03-23','20:15:00',3,'Confirmed','Arkadaş buluşması.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Levent Tan','+90 532 234 56 77','levent.tan@example.com','2026-03-24','18:20:00',2,'Pending','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Hande Gür','+90 533 345 67 88','hande.gur@example.com','2026-03-24','19:35:00',4,'Confirmed','Özel masa isteği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Can Yılmaz','+90 532 555 11 22','can.yilmaz@example.com','2026-03-25','18:30:00',2,'Pending','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Nihal Korkmaz','+90 533 444 11 22','nihal.korkmaz@example.com','2026-03-25','19:45:00',4,'Confirmed','Aile yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Kerem Şahin','+90 534 777 33 22','kerem.sahin@example.com','2026-03-25','20:15:00',3,'Pending','Pencere kenarı.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('İrem Yıldırım','+90 535 222 66 11','irem.yildirim@example.com','2026-03-26','18:40:00',2,'Confirmed','Romantik masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Barış Acar','+90 536 111 77 22','baris.acar@example.com','2026-03-26','19:10:00',5,'Pending','Grup rezervasyonu.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Oya Karaman','+90 537 333 88 22','oya.karaman@example.com','2026-03-26','20:20:00',2,'Confirmed','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Furkan Doğan','+90 538 999 22 33','furkan.dogan@example.com','2026-03-27','19:00:00',4,'Pending','İş yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Gizem Çetin','+90 539 888 11 55','gizem.cetin@example.com','2026-03-27','20:30:00',3,'Confirmed','Arkadaş buluşması.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Tuna Akın','+90 531 222 11 99','tuna.akin@example.com','2026-03-27','18:15:00',2,'Pending','Erken rezervasyon.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Berkay Güler','+90 532 444 99 33','berkay.guler@example.com','2026-03-28','19:30:00',4,'Confirmed','Aile yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Selda Yaman','+90 533 222 44 11','selda.yaman@example.com','2026-03-28','20:45:00',2,'Pending','Romantik masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Hüseyin Polat','+90 534 555 77 88','huseyin.polat@example.com','2026-03-28','18:50:00',3,'Confirmed','Standart masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Seray Demirtaş','+90 535 444 33 22','seray.demirtas@example.com','2026-03-29','19:40:00',2,'Pending','Pencere kenarı.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Tolga Özkan','+90 536 222 55 66','tolga.ozkan@example.com','2026-03-29','20:10:00',6,'Confirmed','Kalabalık grup.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Dilan Aydın','+90 537 777 44 11','dilan.aydin@example.com','2026-03-29','18:25:00',2,'Pending','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Oğuz Kılıç','+90 538 444 88 22','oguz.kilic@example.com','2026-03-30','19:15:00',3,'Confirmed','Arkadaş yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Nazan Öz','+90 539 666 33 22','nazan.oz@example.com','2026-03-30','20:20:00',4,'Pending','Aile yemeği.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Rıza Kalkan','+90 531 333 22 44','riza.kalkan@example.com','2026-03-30','18:45:00',2,'Confirmed','Sessiz masa.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Mina Aras','+90 532 777 11 66','mina.aras@example.com','2026-03-31','19:30:00',3,'Pending','Pencere kenarı.');
+
+INSERT INTO "Reservations" ("Name","Phone","Email","ReservationDate","ReservationTime","GuestCount","Status","Description")
+VALUES ('Burcu Koçak','+90 533 888 44 55','burcu.kocak@example.com','2026-03-31','20:15:00',2,'Confirmed','Romantik masa.');

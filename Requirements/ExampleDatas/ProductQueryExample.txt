@@ -1,0 +1,323 @@
+﻿INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Domatesli Bruschetta','Domates / Zeytinyağı / Sarımsak / Fesleğen','/images/products/bruschetta.jpg',true,4.00,1),
+
+('Karides Tempura','Karides / Tempura Hamuru / Tatlı Acı Sos','/images/products/shrimp-tempura.jpg',true,7.50,1),
+
+('Avokado Salsa','Avokado / Mango / Domates / Lime','/images/products/avocado-salsa.jpg',true,5.50,1),
+
+('Fırın Patates Kabuğu','Patates / Cheddar Peyniri / Yeşil Soğan','/images/products/potato-skins.jpg',true,6.00,1),
+
+('Mozzarella Stick','Mozzarella / Pane Harcı / Domates Sos','/images/products/mozzarella-stick.jpg',true,6.50,1),
+
+('Çıtır Soğan Halkası','Soğan / Un / Pane Harcı / Barbekü Sos','/images/products/onion-rings.jpg',true,5.00,1),
+
+('Humus Tabağı','Nohut / Tahin / Zeytinyağı / Kimyon','/images/products/hummus.jpg',true,4.50,1),
+
+('Patlıcan Ezmesi','Köz Patlıcan / Yoğurt / Sarımsak / Zeytinyağı','/images/products/eggplant-dip.jpg',true,4.50,1),
+
+('Sigara Böreği','Yufka / Beyaz Peynir / Maydanoz','/images/products/sigara-boregi.jpg',true,4.00,1),
+
+('Nachos Tabağı','Tortilla Cips / Cheddar / Jalapeno / Salsa Sos','/images/products/nachos.jpg',true,7.00,1),
+
+('Karides Kokteyl','Karides / Kokteyl Sos / Limon','/images/products/shrimp-cocktail.jpg',true,8.00,1),
+
+('Mini Burger','Dana Köfte / Mini Ekmek / Cheddar / Turşu','/images/products/mini-burger.jpg',true,7.50,1),
+
+('Zeytinyağlı Enginar','Enginar / Havuç / Zeytinyağı / Dereotu','/images/products/artichoke.jpg',true,5.50,1),
+
+('Peynir Tabağı','Beyaz Peynir / Kaşar / Zeytin / Ceviz','/images/products/cheese-plate.jpg',true,8.50,1),
+
+('Garlic Bread','Baget Ekmek / Sarımsak / Tereyağı / Maydanoz','/images/products/garlic-bread.jpg',true,4.50,1);
+
+---------------------------------------------------------
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Mercimek Çorbası','Kırmızı Mercimek / Soğan / Havuç / Zeytinyağı','/images/products/mercimek.jpg',true,4.50,2),
+
+('Ezogelin Çorbası','Kırmızı Mercimek / Bulgur / Domates Salçası / Nane','/images/products/ezogelin.jpg',true,4.75,2),
+
+('Domates Çorbası','Domates / Tereyağı / Un / Krema','/images/products/domates.jpg',true,4.25,2),
+
+('Tavuk Suyu Çorba','Tavuk Suyu / Didiklenmiş Tavuk / Şehriye','/images/products/tavuk-suyu.jpg',true,5.00,2),
+
+('Mantar Çorbası','Kültür Mantarı / Krema / Tereyağı / Karabiber','/images/products/mantar.jpg',true,5.50,2),
+
+('Sebze Çorbası','Kabak / Havuç / Patates / Zeytinyağı','/images/products/sebze.jpg',true,4.50,2),
+
+('Tarhana Çorbası','Tarhana / Tereyağı / Sarımsak / Nane','/images/products/tarhana.jpg',true,4.75,2),
+
+('Yoğurt Çorbası','Yoğurt / Pirinç / Nane / Tereyağı','/images/products/yogurt-corbasi.jpg',true,4.50,2),
+
+('Brokoli Çorbası','Brokoli / Krema / Soğan / Zeytinyağı','/images/products/brokoli.jpg',true,5.25,2),
+
+('Balık Çorbası','Levrek / Havuç / Soğan / Defne Yaprağı','/images/products/balik-corbasi.jpg',true,6.50,2),
+
+('Kremalı Tavuk Çorbası','Tavuk / Krema / Mantar / Karabiber','/images/products/kremali-tavuk.jpg',true,5.75,2),
+
+('Düğün Çorbası','Kuzu Eti / Yoğurt / Un / Tereyağı','/images/products/dugun.jpg',true,5.50,2);
+
+--------------------------------------------------------------------------
+
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Sezar Salata','Marul / Izgara Tavuk / Parmesan / Sezar Sos','/images/products/caesar-salad.jpg',true,8.50,3),
+
+('Akdeniz Salata','Domates / Salatalık / Zeytin / Beyaz Peynir','/images/products/akdeniz-salata.jpg',true,7.00,3),
+
+('Tavuklu Yeşil Salata','Marul / Izgara Tavuk / Avokado / Hardal Sos','/images/products/chicken-salad.jpg',true,8.75,3),
+
+('Ton Balıklı Salata','Ton Balığı / Mısır / Marul / Limon Sos','/images/products/tuna-salad.jpg',true,8.25,3),
+
+('Avokado Salata','Avokado / Roka / Cherry Domates / Zeytinyağı','/images/products/avocado-salad.jpg',true,8.00,3),
+
+('Kinoa Salata','Kinoa / Avokado / Salatalık / Nar Ekşisi','/images/products/quinoa-salad.jpg',true,9.00,3),
+
+('Roka Salata','Roka / Parmesan / Ceviz / Zeytinyağı','/images/products/arugula-salad.jpg',true,7.50,3),
+
+('Izgara Peynir Salata','Izgara Hellim / Marul / Domates / Zeytinyağı','/images/products/grilled-cheese-salad.jpg',true,8.50,3),
+
+('Karides Salata','Karides / Marul / Avokado / Lime Sos','/images/products/shrimp-salad.jpg',true,10.00,3),
+
+('Fit Salata','Marul / Havuç / Salatalık / Zeytinyağı','/images/products/fit-salad.jpg',true,6.50,3),
+
+('Sebzeli Salata','Marul / Cherry Domates / Salatalık / Mısır','/images/products/vegetable-salad.jpg',true,7.25,3),
+
+('Nar Ekşili Salata','Marul / Domates / Ceviz / Nar Ekşisi','/images/products/pomegranate-salad.jpg',true,7.75,3),
+
+('Avokadolu Tavuk Salata','Izgara Tavuk / Avokado / Marul / Yoğurt Sos','/images/products/avocado-chicken-salad.jpg',true,9.25,3),
+
+('Caprese Salata','Mozzarella / Domates / Fesleğen / Zeytinyağı','/images/products/caprese.jpg',true,8.00,3),
+
+('Sebze Bahçesi Salata','Marul / Havuç / Kabak / Zeytinyağı','/images/products/garden-salad.jpg',true,7.00,3);
+
+--------------------------------------------------------------------------------
+
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Izgara Tavuk','Tavuk Göğsü / Zeytinyağı / Kekik','/images/products/grilled-chicken.jpg',true,15.50,4),
+
+('Kremalı Mantarlı Tavuk','Tavuk Göğsü / Krema / Kültür Mantarı','/images/products/creamy-mushroom-chicken.jpg',true,16.50,4),
+
+('Fırın Somon','Somon / Limon / Zeytinyağı','/images/products/baked-salmon.jpg',true,19.00,4),
+
+('Dana Bonfile','Dana Bonfile / Karabiber / Tereyağı','/images/products/beef-tenderloin.jpg',true,22.00,4),
+
+('Et Sote','Dana Eti / Biber / Soğan','/images/products/beef-saute.jpg',true,18.00,4),
+
+('Sebzeli Tavuk','Tavuk Göğsü / Kabak / Havuç','/images/products/vegetable-chicken.jpg',true,16.00,4),
+
+('BBQ Tavuk','Tavuk Göğsü / BBQ Sos / Zeytinyağı','/images/products/bbq-chicken.jpg',true,16.75,4),
+
+('Kuzu Tandır','Kuzu Eti / Sarımsak / Kekik','/images/products/lamb-tandoor.jpg',true,23.00,4),
+
+('Dana Antrikot','Dana Antrikot / Zeytinyağı / Karabiber','/images/products/ribeye.jpg',true,24.50,4),
+
+('Tavuk Schnitzel','Tavuk Göğsü / Pane Harcı / Limon','/images/products/chicken-schnitzel.jpg',true,17.00,4),
+
+('Tavuk Fajita','Tavuk / Biber / Soğan','/images/products/chicken-fajita.jpg',true,17.50,4),
+
+('Et Fajita','Dana Eti / Biber / Soğan','/images/products/beef-fajita.jpg',true,18.50,4),
+
+('Sebzeli Noodle','Noodle / Sebzeler / Soya Sosu','/images/products/noodle.jpg',true,14.00,4),
+
+('Fırın Tavuk','Tavuk But / Patates / Kekik','/images/products/roasted-chicken.jpg',true,16.50,4),
+
+('Mantarlı Bonfile','Dana Bonfile / Mantar / Krema','/images/products/mushroom-steak.jpg',true,23.50,4),
+
+('Kremalı Somon','Somon / Krema / Dereotu','/images/products/creamy-salmon.jpg',true,20.00,4),
+
+('Sebzeli Bonfile','Dana Bonfile / Kabak / Havuç','/images/products/vegetable-steak.jpg',true,23.00,4),
+
+('Teriyaki Tavuk','Tavuk Göğsü / Teriyaki Sos / Susam','/images/products/teriyaki-chicken.jpg',true,17.50,4),
+
+('Kuzu Pirzola','Kuzu Pirzola / Zeytinyağı / Kekik','/images/products/lamb-chops.jpg',true,24.00,4),
+
+('Izgara Köfte','Dana Kıyma / Soğan / Baharat','/images/products/grilled-meatballs.jpg',true,15.00,4),
+
+('Şefin Tabağı','Dana Eti / Tavuk / Sebzeler','/images/products/chef-plate.jpg',true,21.00,4),
+
+('Kuzu Şiş','Kuzu Eti / Biber / Soğan','/images/products/lamb-skewer.jpg',true,22.00,4),
+
+('Tavuk Teriyaki','Tavuk Göğsü / Teriyaki Sos / Susam','/images/products/chicken-teriyaki.jpg',true,17.25,4),
+
+('Izgara Hindi','Hindi Göğsü / Zeytinyağı / Kekik','/images/products/grilled-turkey.jpg',true,16.75,4),
+
+('Sebzeli Tavuk Izgara','Tavuk Göğsü / Sebzeler / Zeytinyağı','/images/products/chicken-grill-veg.jpg',true,16.50,4);
+
+-------------------------------------------------------------------------
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Adana Kebap','Kuzu Kıyma / Kırmızı Biber / Kuyruk Yağı','/images/products/adana.jpg',true,18.50,5),
+
+('Urfa Kebap','Kuzu Kıyma / Soğan / Baharat','/images/products/urfa.jpg',true,18.00,5),
+
+('Tavuk Şiş','Tavuk Göğsü / Zeytinyağı / Kekik','/images/products/tavuk-sis.jpg',true,16.50,5),
+
+('Kuzu Şiş','Kuzu Eti / Biber / Soğan','/images/products/kuzu-sis.jpg',true,21.00,5),
+
+('Izgara Köfte','Dana Kıyma / Soğan / Baharat','/images/products/izgara-kofte.jpg',true,15.00,5),
+
+('Dana Şiş','Dana Eti / Biber / Soğan','/images/products/dana-sis.jpg',true,20.50,5),
+
+('Kuzu Pirzola Izgara','Kuzu Pirzola / Zeytinyağı / Kekik','/images/products/kuzu-pirzola.jpg',true,24.00,5),
+
+('Tavuk Kanat','Tavuk Kanat / BBQ Sos / Baharat','/images/products/tavuk-kanat.jpg',true,16.00,5),
+
+('Karışık Izgara','Dana Şiş / Tavuk Şiş / Köfte','/images/products/karisik-izgara.jpg',true,26.00,5),
+
+('Antrikot Izgara','Dana Antrikot / Zeytinyağı / Karabiber','/images/products/antrikot.jpg',true,25.50,5),
+
+('Bonfile Izgara','Dana Bonfile / Tereyağı / Karabiber','/images/products/bonfile.jpg',true,27.00,5),
+
+('Kuzu Kaburga','Kuzu Kaburga / Kekik / Zeytinyağı','/images/products/kaburga.jpg',true,23.00,5),
+
+('Izgara Sucuk','Sucuk / Domates / Biber','/images/products/sucuk.jpg',true,14.50,5),
+
+('Izgara Tavuk Fileto','Tavuk Göğsü / Sarımsak / Kekik','/images/products/tavuk-fileto.jpg',true,16.50,5),
+
+('Köfte Izgara','Dana Kıyma / Sarımsak / Baharat','/images/products/kofte.jpg',true,15.50,5),
+
+('Et Şiş Izgara','Dana Eti / Biber / Soğan','/images/products/et-sis.jpg',true,20.00,5),
+
+('Izgara Sebze','Kabak / Patlıcan / Biber','/images/products/grilled-veg.jpg',true,12.50,5),
+
+('Kuzu Küşleme','Kuzu Eti / Zeytinyağı / Kekik','/images/products/kusleme.jpg',true,26.00,5),
+
+('Dana Kaburga Izgara','Dana Kaburga / Karabiber / Kekik','/images/products/dana-kaburga.jpg',true,24.50,5),
+
+('Izgara Tavuk Kanat','Tavuk Kanat / Zeytinyağı / Baharat','/images/products/grilled-wings.jpg',true,16.25,5);
+
+-------------------------------------------------------------------------
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Spaghetti Bolognese','Spaghetti / Dana Kıyma / Domates Sos','/images/products/spaghetti-bolognese.jpg',true,14.50,6),
+
+('Fettuccine Alfredo','Fettuccine / Krema / Parmesan','/images/products/fettuccine-alfredo.jpg',true,15.00,6),
+
+('Penne Arrabbiata','Penne / Domates Sos / Acı Biber','/images/products/penne-arrabbiata.jpg',true,13.75,6),
+
+('Spaghetti Carbonara','Spaghetti / Yumurta / Pancetta','/images/products/carbonara.jpg',true,15.50,6),
+
+('Lasagna','Lazanya / Dana Kıyma / Beşamel Sos','/images/products/lasagna.jpg',true,16.00,6),
+
+('Tagliatelle','Tagliatelle / Krema / Mantarlı Sos','/images/products/tagliatelle.jpg',true,15.25,6),
+
+('Ravioli','Ravioli / Ricotta / Ispanak','/images/products/ravioli.jpg',true,15.75,6),
+
+('Pesto Pasta','Pasta / Fesleğen / Parmesan','/images/products/pesto.jpg',true,14.25,6),
+
+('Deniz Mahsullü Pasta','Spaghetti / Karides / Midye','/images/products/seafood-pasta.jpg',true,18.00,6),
+
+('Kremalı Mantarlı Pasta','Penne / Krema / Mantar','/images/products/mushroom-pasta.jpg',true,14.75,6),
+
+('Tavuklu Pasta','Penne / Tavuk Göğsü / Krema','/images/products/chicken-pasta.jpg',true,15.50,6),
+
+('Sebzeli Pasta','Spaghetti / Kabak / Havuç','/images/products/vegetable-pasta.jpg',true,13.50,6),
+
+('Karidesli Pasta','Spaghetti / Karides / Sarımsak','/images/products/shrimp-pasta.jpg',true,17.50,6),
+
+('Napoli Pasta','Penne / Domates Sos / Fesleğen','/images/products/napoli.jpg',true,13.75,6),
+
+('Trüf Mantarlı Pasta','Tagliatelle / Trüf Yağı / Parmesan','/images/products/truffle-pasta.jpg',true,19.00,6);
+
+-----------------------------------------------------------------------
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Pizza Margherita','Mozzarella / Domates Sos / Fesleğen','/images/products/margherita.jpg',true,13.50,7),
+
+('Pepperoni Pizza','Mozzarella / Pepperoni / Domates Sos','/images/products/pepperoni.jpg',true,14.50,7),
+
+('Quattro Formaggi','Mozzarella / Gorgonzola / Parmesan','/images/products/quattro-formaggi.jpg',true,15.50,7),
+
+('Vegetarian Pizza','Mozzarella / Biber / Mantar','/images/products/vegetarian.jpg',true,14.00,7),
+
+('BBQ Chicken Pizza','Mozzarella / Tavuk / BBQ Sos','/images/products/bbq-chicken.jpg',true,15.25,7),
+
+('Ton Balıklı Pizza','Mozzarella / Ton Balığı / Soğan','/images/products/tuna-pizza.jpg',true,15.00,7),
+
+('Karides Pizza','Mozzarella / Karides / Sarımsak','/images/products/shrimp-pizza.jpg',true,16.75,7),
+
+('Mantarlı Pizza','Mozzarella / Kültür Mantarı / Domates Sos','/images/products/mushroom-pizza.jpg',true,13.75,7),
+
+('Sucuklu Pizza','Mozzarella / Sucuk / Domates Sos','/images/products/sucuk-pizza.jpg',true,14.75,7),
+
+('Karışık Pizza','Mozzarella / Sucuk / Biber','/images/products/mixed-pizza.jpg',true,15.75,7),
+
+('Napoli Pizza','Mozzarella / Domates Sos / Kekik','/images/products/napoli-pizza.jpg',true,13.25,7),
+
+('Prosciutto Pizza','Mozzarella / Prosciutto / Roka','/images/products/prosciutto.jpg',true,16.50,7),
+
+('Mozzarella Pizza','Mozzarella / Domates Sos / Zeytinyağı','/images/products/mozzarella.jpg',true,13.75,7),
+
+('Akdeniz Pizza','Mozzarella / Zeytin / Feta Peyniri','/images/products/mediterranean.jpg',true,14.25,7),
+
+('Sebzeli Pizza','Mozzarella / Kabak / Biber','/images/products/vegetable-pizza.jpg',true,13.50,7);
+
+
+---------------------------------------------------------------------------------
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Tiramisu','Mascarpone / Kahve / Kakao','/images/products/tiramisu.jpg',true,8.50,8),
+
+('Cheesecake','Krem Peynir / Bisküvi / Frambuaz Sos','/images/products/cheesecake.jpg',true,8.75,8),
+
+('Çikolatalı Sufle','Bitter Çikolata / Yumurta / Tereyağı','/images/products/souffle.jpg',true,9.00,8),
+
+('Panna Cotta','Krema / Vanilya / Frambuaz','/images/products/panna-cotta.jpg',true,8.25,8),
+
+('San Sebastian Cheesecake','Krem Peynir / Krema / Şeker','/images/products/san-sebastian.jpg',true,9.50,8),
+
+('Profiterol','Choux Hamuru / Krema / Çikolata Sos','/images/products/profiterol.jpg',true,8.00,8),
+
+('Dondurma Tabağı','Vanilya / Çikolata / Çilek','/images/products/ice-cream.jpg',true,7.50,8),
+
+('Creme Brulee','Krema / Yumurta / Karamelize Şeker','/images/products/creme-brulee.jpg',true,8.75,8),
+
+('Brownie','Bitter Çikolata / Tereyağı / Kakao','/images/products/brownie.jpg',true,8.25,8),
+
+('Meyve Tabağı','Çilek / Kivi / Ananas','/images/products/fruit-plate.jpg',true,7.00,8),
+
+('Magnolia','Bisküvi / Krema / Muz','/images/products/magnolia.jpg',true,8.25,8),
+
+('Fırın Sütlaç','Süt / Pirinç / Tarçın','/images/products/sutlac.jpg',true,7.50,8);
+
+-------------------------------------------------------------------------------------
+
+INSERT INTO "Products"
+("ProductName","Description","ImageUrl","Status","Price","CategoryId")
+VALUES
+('Kola','Kola / Buz / Limon','/images/products/cola.jpg',true,4.50,9),
+('Fanta','Portakal Aroması / Buz / Limon','/images/products/fanta.jpg',true,4.50,9),
+('Sprite','Limon Aroması / Buz / Limon','/images/products/sprite.jpg',true,4.50,9),
+('Limonata','Limon / Şeker / Nane','/images/products/lemonade.jpg',true,5.50,9),
+('Ice Tea Şeftali','Şeftali Aroması / Çay / Buz','/images/products/ice-tea-peach.jpg',true,5.00,9),
+('Portakal Suyu','Taze Portakal / Buz / Nane','/images/products/orange-juice.jpg',true,6.00,9),
+('Elma Suyu','Elma / Buz / Nane','/images/products/apple-juice.jpg',true,5.75,9),
+('Soda','Maden Suyu / Limon / Buz','/images/products/soda.jpg',true,3.50,9),
+('Gazoz','Limon Aroması / Şeker / Buz','/images/products/gazoz.jpg',true,4.25,9),
+('Ayran','Yoğurt / Su / Tuz','/images/products/ayran.jpg',true,3.75,9),
+
+('Espresso','Espresso Kahve / Su / Krema','/images/products/espresso.jpg',true,5.50,10),
+('Americano','Espresso / Sıcak Su / Kahve','/images/products/americano.jpg',true,5.75,10),
+('Latte','Espresso / Süt / Süt Köpüğü','/images/products/latte.jpg',true,6.25,10),
+('Cappuccino','Espresso / Süt / Süt Köpüğü','/images/products/cappuccino.jpg',true,6.50,10),
+('Mocha','Espresso / Çikolata / Süt','/images/products/mocha.jpg',true,6.75,10),
+('Türk Kahvesi','Türk Kahvesi / Su / Köpük','/images/products/turkish-coffee.jpg',true,5.25,10),
+('Filtre Kahve','Filtre Kahve / Sıcak Su / Aroma','/images/products/filter-coffee.jpg',true,5.50,10),
+('Çay','Siyah Çay / Su / Dem','/images/products/tea.jpg',true,3.00,10);
