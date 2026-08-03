@@ -641,7 +641,8 @@
             <div class="nav-section-label">Ana Menü</div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link disabled-nav" href="#" aria-disabled="true">
+                    <a class="nav-link @(currentController == "Dashboard" ? "active" : "")"
+                       asp-controller="Dashboard" asp-action="Index">
                         <i class="bi bi-grid-1x2-fill nav-icon"></i>
                         <span class="nav-label">Dashboard</span>
                     </a>
