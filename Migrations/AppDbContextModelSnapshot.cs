@@ -123,6 +123,41 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Migrations
                     b.ToTable("Reservations");
                 });
 
+            modelBuilder.Entity("DatabaseMastery.HotCoffeePostgreSQL.Entities.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ReviewId"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("ReviewId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("DatabaseMastery.HotCoffeePostgreSQL.Entities.Product", b =>
                 {
                     b.HasOne("DatabaseMastery.HotCoffeePostgreSQL.Entities.Category", "Category")
@@ -132,6 +167,17 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DatabaseMastery.HotCoffeePostgreSQL.Entities.Review", b =>
+                {
+                    b.HasOne("DatabaseMastery.HotCoffeePostgreSQL.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("DatabaseMastery.HotCoffeePostgreSQL.Entities.Category", b =>

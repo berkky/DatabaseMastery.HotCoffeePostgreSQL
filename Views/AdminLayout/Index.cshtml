@@ -686,7 +686,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled-nav" href="#" aria-disabled="true">
+                    <a class="nav-link @(currentController == "Review" ? "active" : "")"
+                       asp-controller="Review" asp-action="ReviewList">
                         <i class="bi bi-chat-square-dots-fill nav-icon"></i>
                         <span class="nav-label">Yorumlar</span>
                     </a>
@@ -697,7 +698,8 @@
             <div class="nav-section-label">Analiz & Ayarlar</div>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link disabled-nav" href="#" aria-disabled="true">
+                    <a class="nav-link @(currentController == "Statistics" ? "active" : "")"
+                       asp-controller="Statistics" asp-action="Index">
                         <i class="bi bi-bar-chart-line-fill nav-icon"></i>
                         <span class="nav-label">İstatistikler</span>
                     </a>

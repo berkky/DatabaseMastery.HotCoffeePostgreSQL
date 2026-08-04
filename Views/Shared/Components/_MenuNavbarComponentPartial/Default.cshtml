@@ -31,10 +31,10 @@
                 <!-- LOGO -->
 
                 <div class="logo-1">
-                    <a href="index.html">
+                    <a asp-controller="Menu" asp-action="Index" asp-fragment="top">
                         <img class="img-fluid"
                              src="/dina-html/images/logo-dina-white.png"
-                             alt="" />
+                             alt="Dina" />
                     </a>
                 </div>
 
@@ -43,12 +43,12 @@
                 <div class="nav-holder nav-holder-1 nav-holder-desktop">
                     <ul id="menu-menu-1" class="menu-nav menu-nav-1">
 
-                        <li class="menu-item"><a href="#">Ana Sayfa</a></li>
-                        <li class="menu-item"><a href="#">Menü</a></li>
-                        <li class="menu-item"><a href="#">Rezervasyon</a></li>
-                        <li class="menu-item"><a href="#">Kategoriler</a></li>
-                        <li class="menu-item"><a href="#">Galeri</a></li>
-                        <li class="menu-item"><a href="#">Bize Yazın</a></li>
+                        <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="top">Ana Sayfa</a></li>
+                        <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="menu-section">Menü</a></li>
+                        <li class="menu-item"><a asp-controller="Reservation" asp-action="CreateReservation">Rezervasyon</a></li>
+                        <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="categories-section">Kategoriler</a></li>
+                        <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="gallery-section">Galeri</a></li>
+                        <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="contact-section">Bize Yazın</a></li>
 
                     </ul>
                 </div>

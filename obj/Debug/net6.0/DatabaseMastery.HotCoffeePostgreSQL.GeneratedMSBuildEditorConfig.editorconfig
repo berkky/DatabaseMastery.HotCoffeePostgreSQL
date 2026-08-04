@@ -83,6 +83,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cVXBkYXRlUmVzZXJ2YXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/CreateReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XENyZWF0ZVJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/ReviewList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlld0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_ChartComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NoYXJ0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -143,12 +151,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVUb3BJbWFnZVNlY3Rpb25Db21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsBigGridComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NCaWdHcmlkQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsCategoryTableComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NDYXRlZ29yeVRhYmxlQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsHeatmapComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NIZWF0bWFwQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsHeroComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NIZXJvQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsKpiComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NLcGlDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsRatingDistComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NSYXRpbmdEaXN0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsReservationStatusComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NSZXNlcnZhdGlvblN0YXR1c0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsTopProductsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NUb3BQcm9kdWN0c0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Statistics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlzdGljc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/_ViewImports.cshtml]

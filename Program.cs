@@ -4,6 +4,7 @@ using DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ProductServices;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.ReviewServices;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -20,6 +21,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddScoped<IChartService, ChartService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

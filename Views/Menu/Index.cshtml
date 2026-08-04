@@ -7,7 +7,7 @@
 
 @await Component.InvokeAsync("_MenuHeadComponentPartial")
 
-<body class="body-header1">
+<body id="top" class="body-header1">
 
     <div class="mask-nav-2">
 
@@ -20,6 +20,35 @@
     @await Component.InvokeAsync("_MenuTopImageSectionComponentPartial")
 
     @await Component.InvokeAsync("_MenuListComponentPartial")
+
+    <section id="gallery-section" class="menu-public-gallery">
+        <div class="container">
+            <div class="gallery-heading">
+                <h2>Galeri</h2>
+                <p>Restoranımızdan seçilmiş kareler</p>
+            </div>
+            <div class="menu-public-gallery-grid">
+                <div class="menu-public-gallery-item">
+                    <img src="/dina-html/images/gallery/gallery-1.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
+                </div>
+                <div class="menu-public-gallery-item">
+                    <img src="/dina-html/images/gallery/gallery-3.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
+                </div>
+                <div class="menu-public-gallery-item">
+                    <img src="/dina-html/images/gallery/gallery-5.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
+                </div>
+                <div class="menu-public-gallery-item">
+                    <img src="/dina-html/images/gallery/gallery-7.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
+                </div>
+                <div class="menu-public-gallery-item">
+                    <img src="/dina-html/images/gallery/gallery-9.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
+                </div>
+                <div class="menu-public-gallery-item">
+                    <img src="/dina-html/images/gallery/gallery-11.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
+                </div>
+            </div>
+        </div>
+    </section>
 
     @await Component.InvokeAsync("_MenuFooterComponentPartial")
 

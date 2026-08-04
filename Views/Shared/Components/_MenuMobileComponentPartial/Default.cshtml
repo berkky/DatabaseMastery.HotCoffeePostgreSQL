@@ -3,12 +3,12 @@
 
         <ul id="menu-menu-2" class="menu-nav-2">
 
-            <li class="menu-item"><a href="#">Ana Sayfa</a></li>
-            <li class="menu-item"><a href="#">Menü</a></li>
-            <li class="menu-item"><a href="#">Rezervasyon</a></li>
-            <li class="menu-item"><a href="#">Kategoriler</a></li>
-            <li class="menu-item"><a href="#">Galeri</a></li>
-            <li class="menu-item"><a href="#">Bize Yazın</a></li>
+            <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="top">Ana Sayfa</a></li>
+            <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="menu-section">Menü</a></li>
+            <li class="menu-item"><a asp-controller="Reservation" asp-action="CreateReservation">Rezervasyon</a></li>
+            <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="categories-section">Kategoriler</a></li>
+            <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="gallery-section">Galeri</a></li>
+            <li class="menu-item"><a asp-controller="Menu" asp-action="Index" asp-fragment="contact-section">Bize Yazın</a></li>
 
         </ul>
     </div>
@@ -30,11 +30,11 @@
     <!-- SOCIAL ICONS -->
 
     <ul class="search-social search-social-2">
-        <li><a class="social-facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a class="social-twitter" href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        <li><a class="social-tripadvisor" href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a></li>
-        <li><a class="social-pinterest" href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>
-        <li><a class="social-instagram" href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a class="social-facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a class="social-twitter" href="#" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="social-tripadvisor" href="#" target="_blank" rel="noopener" aria-label="Tripadvisor"><i class="fab fa-tripadvisor"></i></a></li>
+        <li><a class="social-pinterest" href="#" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a class="social-instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
     </ul>
 
     <!-- /SOCIAL ICONS -->

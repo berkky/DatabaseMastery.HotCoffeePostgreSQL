@@ -2,6 +2,7 @@ using AutoMapper;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.CategoryDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ProductDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
+using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReviewDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Entities;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Mapping
@@ -24,6 +25,11 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Mapping
             CreateMap<Reservation, CreateReservationDto>().ReverseMap();
             CreateMap<Reservation, UpdateReservationDto>().ReverseMap();
             CreateMap<Reservation, GetReservationByIdDto>().ReverseMap();
+
+            CreateMap<Review, ResultReviewDto>().ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName));
+            CreateMap<Review, CreateReviewDto>().ReverseMap();
+            CreateMap<Review, UpdateReviewDto>().ReverseMap();
+            CreateMap<Review, GetReviewByIdDto>().ReverseMap();
         }
     }
 }
