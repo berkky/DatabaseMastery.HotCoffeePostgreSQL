@@ -713,440 +713,24 @@
     .stat-card:nth-child(6) { animation-delay: .24s }
     .stat-card:nth-child(7) { animation-delay: .28s }
     .stat-card:nth-child(8) { animation-delay: .32s }
+
+    .chart-wrap { position: relative; }
 </style>
 
 <div class="dashboard-wrap">
 
     @await Component.InvokeAsync("_DashboardHeaderComponentPartial")
 
-    <!-- İSTATİSTİK KARTLARI -->
-    <div class="row g-3 mb-4">
+    @await Component.InvokeAsync("_DashboardStatisticsCardsComponentPartial")
 
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-orange">
-                <div class="stat-icon" style="background:var(--accent-soft);">
-                    <i class="bi bi-calendar2-week-fill" style="color:var(--accent-dark);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">52</div>
-                    <div class="stat-lbl">Toplam Rezervasyon</div>
-                    <div class="stat-sub">Tüm zamanlar</div>
-                </div>
-                <div class="stat-trend trend-up ms-auto"><i class="bi bi-arrow-up-short"></i>12%</div>
-            </div>
-        </div>
+    @await Component.InvokeAsync("_DashboardLastReservationsComponentPartial")
 
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-yellow">
-                <div class="stat-icon" style="background:var(--yellow-soft);">
-                    <i class="bi bi-hourglass-split" style="color:var(--yellow);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">27</div>
-                    <div class="stat-lbl">Bekleyen Rezervasyon</div>
-                    <div class="stat-sub">Onay bekliyor</div>
-                </div>
-                <div class="stat-trend trend-neu ms-auto"><i class="bi bi-dash"></i>0%</div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-green">
-                <div class="stat-icon" style="background:var(--green-soft);">
-                    <i class="bi bi-check-circle-fill" style="color:var(--green);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">25</div>
-                    <div class="stat-lbl">Onaylanan Rezervasyon</div>
-                    <div class="stat-sub">Bu ay: 34</div>
-                </div>
-                <div class="stat-trend trend-up ms-auto"><i class="bi bi-arrow-up-short"></i>8%</div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-red">
-                <div class="stat-icon" style="background:var(--red-soft);">
-                    <i class="bi bi-x-circle-fill" style="color:var(--red);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">0</div>
-                    <div class="stat-lbl">İptal Edildi</div>
-                    <div class="stat-sub">Bu ay: 0</div>
-                </div>
-                <div class="stat-trend trend-down ms-auto"><i class="bi bi-arrow-down-short"></i>4%</div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-blue">
-                <div class="stat-icon" style="background:var(--blue-soft);">
-                    <i class="bi bi-calendar-day-fill" style="color:var(--blue);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">6</div>
-                    <div class="stat-lbl">Bugünkü Rezervasyon</div>
-                    <div class="stat-sub">En yakın: 19:30</div>
-                </div>
-                <div class="stat-trend trend-up ms-auto"><i class="bi bi-arrow-up-short"></i>3</div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-purple">
-                <div class="stat-icon" style="background:var(--purple-soft);">
-                    <i class="bi bi-people-fill" style="color:var(--purple);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">148</div>
-                    <div class="stat-lbl">Toplam Müşteri</div>
-                    <div class="stat-sub">Bu hafta: +18</div>
-                </div>
-                <div class="stat-trend trend-up ms-auto"><i class="bi bi-arrow-up-short"></i>5%</div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-teal">
-                <div class="stat-icon" style="background:var(--teal-soft);">
-                    <i class="bi bi-basket3-fill" style="color:var(--teal);"></i>
-                </div>
-                <div>
-                    <div class="stat-num">24</div>
-                    <div class="stat-lbl">Toplam Menü Ürünü</div>
-                    <div class="stat-sub">4 kategoride</div>
-                </div>
-                <div class="stat-trend trend-neu ms-auto"><i class="bi bi-dash"></i>+2</div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-md-6">
-            <div class="stat-card sc-dark">
-                <div class="stat-icon" style="background:#f5f2ee;">
-                    <i class="bi bi-receipt" style="color:#555;"></i>
-                </div>
-                <div>
-                    <div class="stat-num">29</div>
-                    <div class="stat-lbl">Bugünkü Sipariş</div>
-                    <div class="stat-sub">₺ 4.280 ciro</div>
-                </div>
-                <div class="stat-trend trend-up ms-auto"><i class="bi bi-arrow-up-short"></i>11%</div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- SON REZERVASYONLAR + GÜNLÜK AKTİVİTELER -->
-    <div class="row g-3 mb-4">
-
-        <div class="col-xl-8">
-            <div class="dash-card h-100">
-                <div class="dash-card-header">
-                    <div>
-                        <div class="section-title">Son Rezervasyonlar</div>
-                        <div class="section-sub">4 adet rezervasyon</div>
-                    </div>
-                    <a asp-controller="Reservation" asp-action="ReservationList" class="view-all">
-                        Tümünü Gör <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-                <div style="overflow-x:auto;">
-                    <table class="res-table">
-                        <thead>
-                            <tr>
-                                <th>Müşteri</th>
-                                <th>Telefon</th>
-                                <th>Tarih</th>
-                                <th>Saat</th>
-                                <th>Kişi</th>
-                                <th>Durum</th>
-                                <th>Not</th>
-                                <th class="text-center">İşlem</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <span style="font-weight:700;">Ahmet Yılmaz</span>
-                                    <div style="font-size:11.5px;color:var(--muted);">ahmet.yilmaz@email.com</div>
-                                </td>
-                                <td><span style="color:var(--muted);">0532 111 22 33</span></td>
-                                <td>03 Ağu 2026</td>
-                                <td>19:30</td>
-                                <td>
-                                    <span class="guest-chip">
-                                        <i class="bi bi-people-fill" style="font-size:10px;"></i>
-                                        4
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="s-badge sb-green">
-                                        <span class="s-dot"></span>Onaylandı
-                                    </span>
-                                </td>
-                                <td>
-                                    <span style="font-size:12px;color:var(--muted);font-style:italic;">Pencere kenarı masa</span>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-center gap-1">
-                                        <button type="button" class="btn-xs bx-edit" data-tip="Düzenle">
-                                            <i class="bi bi-pencil-fill"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-ok" data-tip="Onayla">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-cancel" data-tip="İptal Et">
-                                            <i class="bi bi-x-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-del" data-tip="Sil">
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-weight:700;">Selin Kaya</span>
-                                    <div style="font-size:11.5px;color:var(--muted);">selin.kaya@email.com</div>
-                                </td>
-                                <td><span style="color:var(--muted);">0533 444 55 66</span></td>
-                                <td>03 Ağu 2026</td>
-                                <td>20:00</td>
-                                <td>
-                                    <span class="guest-chip">
-                                        <i class="bi bi-people-fill" style="font-size:10px;"></i>
-                                        2
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="s-badge sb-yellow">
-                                        <span class="s-dot"></span>Beklemede
-                                    </span>
-                                </td>
-                                <td>
-                                    <span style="font-size:12px;color:var(--muted);font-style:italic;">Doğum günü kutlaması</span>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-center gap-1">
-                                        <button type="button" class="btn-xs bx-edit" data-tip="Düzenle">
-                                            <i class="bi bi-pencil-fill"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-ok" data-tip="Onayla">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-cancel" data-tip="İptal Et">
-                                            <i class="bi bi-x-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-del" data-tip="Sil">
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-weight:700;">Murat Demir</span>
-                                    <div style="font-size:11.5px;color:var(--muted);">murat.demir@email.com</div>
-                                </td>
-                                <td><span style="color:var(--muted);">0534 777 88 99</span></td>
-                                <td>04 Ağu 2026</td>
-                                <td>18:45</td>
-                                <td>
-                                    <span class="guest-chip">
-                                        <i class="bi bi-people-fill" style="font-size:10px;"></i>
-                                        6
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="s-badge sb-green">
-                                        <span class="s-dot"></span>Onaylandı
-                                    </span>
-                                </td>
-                                <td>
-                                    <span style="font-size:12px;color:var(--muted);font-style:italic;">Vejetaryen menü</span>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-center gap-1">
-                                        <button type="button" class="btn-xs bx-edit" data-tip="Düzenle">
-                                            <i class="bi bi-pencil-fill"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-ok" data-tip="Onayla">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-cancel" data-tip="İptal Et">
-                                            <i class="bi bi-x-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-del" data-tip="Sil">
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-weight:700;">Emre Çelik</span>
-                                    <div style="font-size:11.5px;color:var(--muted);">emre.celik@email.com</div>
-                                </td>
-                                <td><span style="color:var(--muted);">0535 222 33 44</span></td>
-                                <td>04 Ağu 2026</td>
-                                <td>21:15</td>
-                                <td>
-                                    <span class="guest-chip">
-                                        <i class="bi bi-people-fill" style="font-size:10px;"></i>
-                                        3
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="s-badge sb-yellow">
-                                        <span class="s-dot"></span>Beklemede
-                                    </span>
-                                </td>
-                                <td>
-                                    <span style="font-size:12px;color:#ddd;">—</span>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-center gap-1">
-                                        <button type="button" class="btn-xs bx-edit" data-tip="Düzenle">
-                                            <i class="bi bi-pencil-fill"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-ok" data-tip="Onayla">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-cancel" data-tip="İptal Et">
-                                            <i class="bi bi-x-lg"></i>
-                                        </button>
-                                        <button type="button" class="btn-xs bx-del" data-tip="Sil">
-                                            <i class="bi bi-trash3-fill"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-4">
-            <div class="dash-card h-100">
-                <div class="dash-card-header">
-                    <div>
-                        <div class="section-title">Günlük Aktiviteler</div>
-                        <div class="section-sub">Son gerçekleşen işlemler</div>
-                    </div>
-                    <span style="font-size:11px;background:var(--green-soft);color:#16a34a;padding:3px 9px;border-radius:20px;font-weight:700;">
-                        <i class="bi bi-circle-fill" style="font-size:7px;animation:pulse-g 2s infinite;"></i> Canlı
-                    </span>
-                </div>
-                <div class="dash-card-body pt-0">
-                    <div class="timeline">
-
-                        <div class="tl-item">
-                            <div class="tl-icon" style="background:var(--green-soft);">
-                                <i class="bi bi-check-circle-fill" style="color:var(--green);"></i>
-                            </div>
-                            <div class="tl-content">
-                                <div class="tl-title">Rezervasyon onaylandı</div>
-                                <div class="tl-desc">Ahmet Yılmaz — 4 kişi, 19:30</div>
-                                <div class="tl-time">10:24</div>
-                            </div>
-                        </div>
-
-                        <div class="tl-item">
-                            <div class="tl-icon" style="background:var(--accent-soft);">
-                                <i class="bi bi-calendar2-check-fill" style="color:var(--accent-dark);"></i>
-                            </div>
-                            <div class="tl-content">
-                                <div class="tl-title">Rezervasyon oluşturuldu</div>
-                                <div class="tl-desc">Selin Kaya — 2 kişi, 20:00</div>
-                                <div class="tl-time">09:15</div>
-                            </div>
-                        </div>
-
-                        <div class="tl-item">
-                            <div class="tl-icon" style="background:var(--green-soft);">
-                                <i class="bi bi-check-circle-fill" style="color:var(--green);"></i>
-                            </div>
-                            <div class="tl-content">
-                                <div class="tl-title">Rezervasyon onaylandı</div>
-                                <div class="tl-desc">Murat Demir — 6 kişi, 18:45</div>
-                                <div class="tl-time">Dün 16:40</div>
-                            </div>
-                        </div>
-
-                        <div class="tl-item">
-                            <div class="tl-icon" style="background:var(--accent-soft);">
-                                <i class="bi bi-calendar2-check-fill" style="color:var(--accent-dark);"></i>
-                            </div>
-                            <div class="tl-content">
-                                <div class="tl-title">Rezervasyon oluşturuldu</div>
-                                <div class="tl-desc">Emre Çelik — 3 kişi, 21:15</div>
-                                <div class="tl-time">Dün 14:22</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    @await Component.InvokeAsync("_ChartComponentPartial")
 
     <!-- HIZLI İŞLEMLER + SON DEĞERLENDİRMELER + HAFTALIK ÖZET -->
     <div class="row g-3">
 
-        <div class="col-xl-4 col-md-6">
-            <div class="dash-card h-100">
-                <div class="dash-card-header">
-                    <div>
-                        <div class="section-title">Hızlı İşlemler</div>
-                        <div class="section-sub">Sık kullanılan kısayollar</div>
-                    </div>
-                </div>
-                <div class="dash-card-body">
-                    <div class="qa-grid">
-                        <a href="/Reservation/CreateReservation" class="qa-btn qa-orange">
-                            <div class="qa-icon" style="background:var(--accent-soft);">
-                                <i class="bi bi-calendar2-plus-fill" style="color:var(--accent-dark);"></i>
-                            </div>
-                            <span>Yeni Rezervasyon</span>
-                        </a>
-                        <a href="/Product/CreateProduct" class="qa-btn qa-green">
-                            <div class="qa-icon" style="background:var(--green-soft);">
-                                <i class="bi bi-plus-circle-fill" style="color:var(--green);"></i>
-                            </div>
-                            <span>Ürün Ekle</span>
-                        </a>
-                        <a href="/Category/CreateCategory" class="qa-btn qa-blue">
-                            <div class="qa-icon" style="background:var(--blue-soft);">
-                                <i class="bi bi-tags-fill" style="color:var(--blue);"></i>
-                            </div>
-                            <span>Kategori Ekle</span>
-                        </a>
-                        <a href="#" class="qa-btn qa-purple">
-                            <div class="qa-icon" style="background:var(--purple-soft);">
-                                <i class="bi bi-megaphone-fill" style="color:var(--purple);"></i>
-                            </div>
-                            <span>Kampanya Oluştur</span>
-                        </a>
-                    </div>
-
-                    <div class="mt-3 p-3 rounded-3" style="background:linear-gradient(135deg,#1a1a1a,#2d2a26);">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <span style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Bugünkü Doluluk</span>
-                            <span style="font-size:13px;font-weight:800;color:var(--accent);">%74</span>
-                        </div>
-                        <div style="background:rgba(255,255,255,0.08);border-radius:6px;height:6px;overflow:hidden;">
-                            <div style="width:74%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-dark));border-radius:6px;"></div>
-                        </div>
-                        <div class="d-flex justify-content-between mt-2" style="font-size:11px;color:rgba(255,255,255,0.35);">
-                            <span>21 / 30 masa dolu</span>
-                            <span>9 masa müsait</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @await Component.InvokeAsync("_DashboardQuickActionsComponentPartial")
 
         <div class="col-xl-4 col-md-6">
             <div class="dash-card h-100">
@@ -1286,3 +870,106 @@
     </div>
 
 </div>
+
+@section Scripts {
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+    Chart.defaults.font.family = "'DM Sans', sans-serif";
+    Chart.defaults.font.size   = 12;
+    Chart.defaults.color       = '#9a9590';
+
+    new Chart(document.getElementById('lineChart'), {
+        type: 'line',
+        data: {
+            labels: window.lineChartLabels,
+            datasets: [{
+                label: 'Rezervasyon',
+                data: window.lineChartData,
+                borderColor: '#e6a03c',
+                backgroundColor: 'rgba(230,160,60,0.08)',
+                borderWidth: 2.5,
+                pointBackgroundColor: '#e6a03c',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                tension: 0.4,
+                fill: true,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: '#f5f2ee' }, border: { display: false } },
+                y: { grid: { color: '#f5f2ee' }, border: { display: false }, ticks: { stepSize: 1 }, beginAtZero: true }
+            }
+        }
+    });
+
+    (function () {
+        const barColors = [
+            'rgba(139,92,246,0.7)',
+            'rgba(230,160,60,0.8)',
+            'rgba(34,197,94,0.7)',
+            'rgba(59,130,246,0.7)',
+            'rgba(20,184,166,0.7)',
+            'rgba(239,68,68,0.7)',
+            'rgba(245,158,11,0.7)',
+        ];
+        const labels = window.barChartLabels || [];
+        new Chart(document.getElementById('barChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Ürün Sayısı',
+                    data: window.barChartData || [],
+                    backgroundColor: labels.map((_, i) => barColors[i % barColors.length]),
+                    borderRadius: 7,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false }, border: { display: false } },
+                    y: { grid: { color: '#f5f2ee' }, border: { display: false }, beginAtZero: true, ticks: { stepSize: 1 } }
+                }
+            }
+        });
+    })();
+
+    (function () {
+        const pieColors = ['#e6a03c', '#3b82f6', '#22c55e', '#8b5cf6', '#14b8a6', '#ef4444', '#f59e0b'];
+        const pieLabels = window.pieChartLabels || [];
+        new Chart(document.getElementById('pieChart'), {
+            type: 'doughnut',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    data: window.pieChartData || [],
+                    backgroundColor: pieLabels.map((_, i) => pieColors[i % pieColors.length]),
+                    borderWidth: 0,
+                    hoverOffset: 6,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '68%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => '₺' + parseFloat(ctx.parsed).toFixed(2)
+                        }
+                    }
+                }
+            }
+        });
+    })();
+</script>
+}

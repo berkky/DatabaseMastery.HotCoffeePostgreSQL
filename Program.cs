@@ -1,5 +1,7 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.CategoryServices;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ProductServices;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
+builder.Services.AddScoped<IChartService, ChartService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -1,0 +1,109 @@
+﻿@model List<ReservationChartDto>
+
+<div class="dash-card">
+    <div class="dash-card-header">
+        <div>
+            <div class="section-title">Günlük Rezervasyonlar</div>
+            <div class="section-sub">Son 7 gün</div>
+        </div>
+    </div>
+    <div class="dash-card-body">
+        <div style="height:220px;">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    const labels = [@Html.Raw(string.Join(",", Model.Select(x => $"\"{x.Day}\"")))];
+    const data   = [@Html.Raw(string.Join(",", Model.Select(x => x.Count)))];
+
+    new Chart(document.getElementById('lineChart'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Rezervasyon',
+                data: data,
+                borderColor: '#e6a03c',
+                backgroundColor: 'rgba(230,160,60,0.08)',
+                borderWidth: 2.5,
+                pointBackgroundColor: '#e6a03c',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 5,
+                tension: 0.4,
+                fill: true,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: '#f5f2ee' }, border: { display: false } },
+                y: { grid: { color: '#f5f2ee' }, border: { display: false }, ticks: { stepSize: 1 }, beginAtZero: true }
+            }
+        }
+    });
+</script>
+}
+
+
+
+
+--------------------------------------------------------------------------
+
+/* ── 1. Çizgi Grafik (Günlük Rezervasyon) ── */
+new Chart(document.getElementById('lineChart'), {
+    type: 'line',
+    data: {
+        labels: window.lineChartLabels,
+        datasets: [{
+            label: 'Rezervasyon',
+            data: window.lineChartData,
+            borderColor: '#e6a03c',
+            backgroundColor: 'rgba(230,160,60,0.08)',
+            borderWidth: 2.5,
+            pointBackgroundColor: '#e6a03c',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 5,
+            tension: 0.4,
+            fill: true,
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { grid: { color: '#f5f2ee' }, border: { display: false } },
+            y: { grid: { color: '#f5f2ee' }, border: { display: false }, ticks: { stepSize: 1 }, beginAtZero: true }
+        }
+    }
+});
+
+
+-----------------------------------------------------------
+
+@model List<ReservationChartDto>
+
+<div class="dash-card">
+    <div class="dash-card-header">
+        <div>
+            <div class="section-title">Günlük Rezervasyonlar</div>
+            <div class="section-sub">Son 7 gün</div>
+        </div>
+    </div>
+    <div class="dash-card-body">
+        <div style="height:220px;">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.lineChartLabels = [@Html.Raw(string.Join(",", Model.Select(x => $"\"{x.Day}\"")))];
+    window.lineChartData   = [@Html.Raw(string.Join(",", Model.Select(x => x.Count)))];
+</script>

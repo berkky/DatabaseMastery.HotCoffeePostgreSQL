@@ -1,3 +1,5 @@
+using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
+
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
 {
     public interface IDashboardService
@@ -10,5 +12,6 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
         Task<int> GetTotalCustomerCountAsync();
         Task<int> GetTotalMenuProductCountAsync();
         Task<int> GetTodayOrderCountAsync();
+        Task<List<ResultReservationDto>> GetTodayReservationListAsync();
     }
 }

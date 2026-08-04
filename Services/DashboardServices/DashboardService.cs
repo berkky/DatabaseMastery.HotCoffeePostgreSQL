@@ -1,4 +1,6 @@
+using AutoMapper;
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
@@ -6,10 +8,12 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
     public class DashboardService : IDashboardService
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public DashboardService(AppDbContext context)
+        public DashboardService(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<int> GetTotalReservationCountAsync()
@@ -57,6 +61,18 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
         public Task<int> GetTodayOrderCountAsync()
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<ResultReservationDto>> GetTodayReservationListAsync()
+        {
+            var today = DateTime.UtcNow.Date;
+
+            var values = await _context.Reservations
+                .Where(x => x.ReservationDate.Date == today)
+                .OrderBy(x => x.ReservationTime)
+                .ToListAsync();
+
+            return _mapper.Map<List<ResultReservationDto>>(values);
         }
     }
 }

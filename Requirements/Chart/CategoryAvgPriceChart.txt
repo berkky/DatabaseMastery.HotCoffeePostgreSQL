@@ -1,0 +1,87 @@
+﻿public async Task<List<CategoryAvgPriceChartDto>> GetCategoryAvgPriceAsync()
+{
+    var result = await _context.Categories
+        .Where(c => c.CategoryStatus)
+        .Select(c => new CategoryAvgPriceChartDto
+        {
+            CategoryName = c.CategoryName,
+            AvgPrice = c.Products
+                .Where(p => p.Status)
+                .Any()
+                    ? Math.Round((decimal)c.Products
+                        .Where(p => p.Status)
+                        .Average(p => (double)p.Price), 2)
+                    : 0
+        })
+        .OrderByDescending(c => c.AvgPrice)
+        .ToListAsync();
+
+    return result;
+}
+
+------------------------------------------------
+
+@model List<CategoryAvgPriceChartDto>
+
+<div class="dash-card">
+    <div class="dash-card-header">
+        <div>
+            <div class="section-title">Kategori Ortalama Fiyatları</div>
+            <div class="section-sub">Aktif kategoriler</div>
+        </div>
+    </div>
+    <div class="dash-card-body">
+        <div class="chart-wrap" style="height:180px;">
+            <canvas id="pieChart"></canvas>
+        </div>
+        <div class="mt-3 d-flex flex-column gap-1" style="font-size:12px;" id="pieChartLegend">
+            @{
+                var colors = new[] { "#e6a03c", "#3b82f6", "#22c55e", "#8b5cf6", "#14b8a6", "#ef4444", "#f59e0b" };
+                for (int i = 0; i < Model.Count; i++)
+                {
+                    <div class="d-flex align-items-center justify-content-between gap-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="width:10px;height:10px;border-radius:3px;background:@colors[i % colors.Length];display:inline-block;flex-shrink:0;"></span>
+                            <span>@Model[i].CategoryName</span>
+                        </div>
+                        <span style="font-weight:700;color:var(--text);">₺@Model[i].AvgPrice.ToString("F2")</span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    window.pieChartLabels = [@Html.Raw(string.Join(",", Model.Select(x => $"\"{x.CategoryName}\"")))];
+    window.pieChartData   = [@Html.Raw(string.Join(",", Model.Select(x => x.AvgPrice.ToString("F2", System.Globalization.CultureInfo.InvariantCulture))))];
+</script>
+
+
+------------------------------------------------------
+
+/* ── 3. Pasta Grafik (Kategori Ortalama Fiyat) ── */
+new Chart(document.getElementById('pieChart'), {
+    type: 'doughnut',
+    data: {
+        labels: window.pieChartLabels,
+        datasets: [{
+            data: window.pieChartData,
+            backgroundColor: ['#e6a03c','#3b82f6','#22c55e','#8b5cf6','#14b8a6','#ef4444','#f59e0b'],
+            borderWidth: 0,
+            hoverOffset: 6,
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        cutout: '68%',
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                callbacks: {
+                    label: ctx => ' ₺' + parseFloat(ctx.parsed).toFixed(2)
+                }
+            }
+        }
+    }
+});
