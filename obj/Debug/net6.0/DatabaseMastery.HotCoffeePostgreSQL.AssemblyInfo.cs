@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DatabaseMastery.HotCoffeePostgreSQL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2e3f9b43124bf002b5ec9e1384cb9d97ba96b45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0fe4369e459539daffd440da6218d8a41a3ab6a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DatabaseMastery.HotCoffeePostgreSQL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DatabaseMastery.HotCoffeePostgreSQL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

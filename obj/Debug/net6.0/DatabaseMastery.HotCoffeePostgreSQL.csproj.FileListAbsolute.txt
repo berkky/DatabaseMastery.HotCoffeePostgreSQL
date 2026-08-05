@@ -52,4 +52,3 @@ C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\Database
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\staticwebassets.build.endpoints.json
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\swae.build.ex.cache
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\Database.B6C08EE7.Up2Date
-C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
