@@ -574,6 +574,8 @@
     }
 </style>
 
+<partial name="_AdminFlashMessagesPartial" />
+
 <!-- =====================================================
      PAGE HEADER
 ===================================================== -->
@@ -814,14 +816,16 @@
                 >
                     Vazgeç
                 </button>
-                <a
-                    id="deleteConfirmLink"
-                    href="#"
-                    class="btn"
-                    style="flex:1;border-radius:10px;background:#ef4444;color:#fff;font-size:13.5px;font-weight:600;padding:10px;text-align:center;text-decoration:none;border:none;box-shadow:0 4px 12px rgba(239,68,68,0.28);"
-                >
-                    <i class="bi bi-trash3-fill me-1"></i> Evet, Sil
-                </a>
+                <form asp-controller="Category" asp-action="DeleteCategory" method="post" class="m-0" style="flex:1;">
+                    <input type="hidden" name="id" id="deleteCategoryId" value="0" />
+                    <button
+                        type="submit"
+                        class="btn w-100"
+                        style="border-radius:10px;background:#ef4444;color:#fff;font-size:13.5px;font-weight:600;padding:10px;text-align:center;border:none;box-shadow:0 4px 12px rgba(239,68,68,0.28);"
+                    >
+                        <i class="bi bi-trash3-fill me-1"></i> Evet, Sil
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -859,7 +863,7 @@
     /* ---- Delete Modal ---- */
     function confirmDelete(id, name) {
         document.getElementById('deleteCatName').textContent = name;
-        document.getElementById('deleteConfirmLink').href = '/Category/DeleteCategory/' + id;
+        document.getElementById('deleteCategoryId').value = id;
         const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
         modal.show();
     }

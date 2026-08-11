@@ -1,11 +1,17 @@
+using DatabaseMastery.HotCoffeePostgreSQL.Authentication;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices;
+using DatabaseMastery.HotCoffeePostgreSQL.Validation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
 {
+    [Authorize(Policy = AuthorizationPolicies.AdminOnly)]
     public class ReservationController : Controller
     {
+        private const string DefaultPendingStatus = "Beklemede";
+
         private readonly IReservationService _reservationService;
 
         public ReservationController(IReservationService reservationService)
@@ -19,29 +25,39 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
             return View(values);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult CreateReservation()
         {
             var model = new CreateReservationDto
             {
-                GuestCount = 2,
-                Status = "Beklemede"
+                GuestCount = 2
             };
 
             return View(model);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> CreateReservation(CreateReservationDto dto)
         {
-            if (!ModelState.IsValid)
+            BusinessRequestNormalizer.TrimCreateReservation(dto);
+            dto.Status = DefaultPendingStatus;
+
+            ModelState.Clear();
+            if (!TryValidateModel(dto))
             {
                 return View(dto);
             }
 
-            if (string.IsNullOrWhiteSpace(dto.Status))
+            ReservationRequestRules.ValidateDateNotInPast(
+                ModelState,
+                dto.ReservationDate,
+                nameof(dto.ReservationDate));
+
+            if (!ModelState.IsValid)
             {
-                dto.Status = "Beklemede";
+                return View(dto);
             }
 
             dto.ReservationDate = DateTime.SpecifyKind(
@@ -53,69 +69,140 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
             return RedirectToAction(nameof(ReservationList));
         }
 
+        [HttpPost]
         public async Task<IActionResult> DeleteReservation(int id)
         {
-            await _reservationService.DeleteReservationAsync(id);
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            var deleted = await _reservationService.DeleteReservationAsync(id);
+            if (!deleted)
+            {
+                return NotFound();
+            }
+
             return RedirectToAction(nameof(ReservationList));
         }
 
         [HttpGet]
         public async Task<IActionResult> UpdateReservation(int id)
         {
+            if (id <= 0)
+            {
+                return NotFound();
+            }
+
             var value = await _reservationService.GetReservationByIdAsync(id);
             if (value == null)
             {
-                return RedirectToAction(nameof(ReservationList));
+                return NotFound();
             }
 
             return View(value);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateReservation(UpdateReservationDto updateReservationDto)
+        public async Task<IActionResult> UpdateReservation(
+            int id,
+            UpdateReservationDto updateReservationDto)
         {
-            if (!ModelState.IsValid)
+            if (id != updateReservationDto.ReservationId)
             {
-                var viewModel = new GetReservationByIdDto
-                {
-                    ReservationId = updateReservationDto.ReservationId,
-                    Name = updateReservationDto.Name,
-                    Phone = updateReservationDto.Phone,
-                    Email = updateReservationDto.Email,
-                    ReservationDate = updateReservationDto.ReservationDate,
-                    ReservationTime = updateReservationDto.ReservationTime,
-                    GuestCount = updateReservationDto.GuestCount,
-                    Status = updateReservationDto.Status,
-                    Description = updateReservationDto.Description
-                };
-                return View(viewModel);
+                return BadRequest();
+            }
+
+            BusinessRequestNormalizer.TrimUpdateReservation(updateReservationDto);
+            ModelState.Clear();
+            if (!TryValidateModel(updateReservationDto))
+            {
+                return View(MapToGetReservationByIdDto(updateReservationDto));
+            }
+
+            if (!await _reservationService.ReservationExistsAsync(id))
+            {
+                return NotFound();
             }
 
             updateReservationDto.ReservationDate = DateTime.SpecifyKind(
                 updateReservationDto.ReservationDate.Date,
                 DateTimeKind.Utc);
 
-            await _reservationService.UpdateReservationAsync(updateReservationDto);
+            var updated = await _reservationService.UpdateReservationAsync(updateReservationDto);
+            if (!updated)
+            {
+                return NotFound();
+            }
 
             return RedirectToAction(nameof(ReservationList));
         }
 
+        [HttpPost]
         public async Task<IActionResult> ApproveReservation(int id)
         {
-            await _reservationService.ChangeReservationStatusToApproval(id);
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            var changed = await _reservationService.ChangeReservationStatusToApproval(id);
+            if (!changed)
+            {
+                return NotFound();
+            }
+
             return RedirectToAction(nameof(ReservationList));
         }
 
+        [HttpPost]
         public async Task<IActionResult> PendingReservation(int id)
         {
-            await _reservationService.ChangeReservationStatusToPending(id);
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            var changed = await _reservationService.ChangeReservationStatusToPending(id);
+            if (!changed)
+            {
+                return NotFound();
+            }
+
             return RedirectToAction(nameof(ReservationList));
         }
 
+        [HttpPost]
         public async Task<IActionResult> CancelReservation(int id)
         {
-            await _reservationService.ChangeReservationStatusToCancel(id);
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+
+            var changed = await _reservationService.ChangeReservationStatusToCancel(id);
+            if (!changed)
+            {
+                return NotFound();
+            }
+
             return RedirectToAction(nameof(ReservationList));
+        }
+
+        private static GetReservationByIdDto MapToGetReservationByIdDto(UpdateReservationDto dto)
+        {
+            return new GetReservationByIdDto
+            {
+                ReservationId = dto.ReservationId,
+                Name = dto.Name,
+                Phone = dto.Phone,
+                Email = dto.Email,
+                ReservationDate = dto.ReservationDate,
+                ReservationTime = dto.ReservationTime,
+                GuestCount = dto.GuestCount,
+                Status = dto.Status,
+                Description = dto.Description ?? string.Empty
+            };
         }
     }
 }

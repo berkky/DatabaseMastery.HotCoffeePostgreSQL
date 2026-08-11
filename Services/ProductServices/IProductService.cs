@@ -1,4 +1,5 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ProductDtos;
+using DatabaseMastery.HotCoffeePostgreSQL.Services;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ProductServices
 {
@@ -6,8 +7,9 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ProductServices
     {
         Task<List<ResultProductDto>> GetAllProductsAsync();
         Task<GetProductByIdDto> GetProductByIdAsync(int id);
+        Task<bool> ProductExistsAsync(int id);
         Task CreateProductAsync(CreateProductDto createProductDto);
-        Task UpdateProductAsync(UpdateProductDto updateProductDto);
-        Task DeleteProductAsync(int id);
+        Task<bool> UpdateProductAsync(UpdateProductDto updateProductDto);
+        Task<DeleteOperationResult> DeleteProductAsync(int id);
     }
 }

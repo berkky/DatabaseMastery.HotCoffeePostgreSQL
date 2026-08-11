@@ -163,7 +163,7 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Migrations
                     b.HasOne("DatabaseMastery.HotCoffeePostgreSQL.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
@@ -174,7 +174,7 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Migrations
                     b.HasOne("DatabaseMastery.HotCoffeePostgreSQL.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Product");

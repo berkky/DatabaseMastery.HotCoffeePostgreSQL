@@ -1,0 +1,13 @@
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\DatabaseMastery.HotCoffeePostgreSQL.exe
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\appsettings.Development.json
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\appsettings.json
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\global.json
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\DatabaseMastery.HotCoffeePostgreSQL.dll
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\DatabaseMastery.HotCoffeePostgreSQL.runtimeconfig.json
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\DatabaseMastery.HotCoffeePostgreSQL.pdb
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\Microsoft.EntityFrameworkCore.dll
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\Npgsql.dll
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Berk\AppData\Local\Temp\hc06b_publish\DatabaseMastery.HotCoffeePostgreSQL.deps.json

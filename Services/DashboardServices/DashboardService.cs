@@ -1,6 +1,7 @@
-using AutoMapper;
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
+using DatabaseMastery.HotCoffeePostgreSQL.Mapping;
+using DatabaseMastery.HotCoffeePostgreSQL.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
@@ -8,12 +9,10 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
     public class DashboardService : IDashboardService
     {
         private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
 
-        public DashboardService(AppDbContext context, IMapper mapper)
+        public DashboardService(AppDbContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         public async Task<int> GetTotalReservationCountAsync()
@@ -44,8 +43,10 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
 
         public async Task<int> GetTodayReservationCountAsync()
         {
+            var start = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.Today);
+            var end = start.AddDays(1);
             return await _context.Reservations.CountAsync(x =>
-                x.ReservationDate.Date == DateTime.Today);
+                x.ReservationDate >= start && x.ReservationDate < end);
         }
 
         public async Task<int> GetTotalCustomerCountAsync()
@@ -65,14 +66,16 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices
 
         public async Task<List<ResultReservationDto>> GetTodayReservationListAsync()
         {
-            var today = DateTime.UtcNow.Date;
+            var start = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.UtcNow);
+            var end = start.AddDays(1);
 
             var values = await _context.Reservations
-                .Where(x => x.ReservationDate.Date == today)
+                .AsNoTracking()
+                .Where(x => x.ReservationDate >= start && x.ReservationDate < end)
                 .OrderBy(x => x.ReservationTime)
                 .ToListAsync();
 
-            return _mapper.Map<List<ResultReservationDto>>(values);
+            return EntityMappers.ToResultReservationDtos(values);
         }
     }
 }

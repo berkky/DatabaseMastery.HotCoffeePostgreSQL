@@ -107,22 +107,26 @@
                                                class="btn-xs bx-edit" data-tip="Düzenle">
                                                 <i class="bi bi-pencil-fill"></i>
                                             </a>
-                                            <a href="/Reservation/ApproveReservation/@r.ReservationId"
-                                               class="btn-xs bx-ok" data-tip="Onayla">
-                                                <i class="bi bi-check-lg"></i>
-                                            </a>
-                                            <a href="/Reservation/PendingReservation/@r.ReservationId"
-                                               class="btn-xs bx-cancel" data-tip="Beklet">
-                                                <i class="bi bi-hourglass-split"></i>
-                                            </a>
-                                            <a href="/Reservation/CancelReservation/@r.ReservationId"
-                                               class="btn-xs bx-cancel" data-tip="İptal Et">
-                                                <i class="bi bi-x-lg"></i>
-                                            </a>
-                                            <a href="/Reservation/DeleteReservation/@r.ReservationId"
-                                               class="btn-xs bx-del" data-tip="Sil">
-                                                <i class="bi bi-trash3-fill"></i>
-                                            </a>
+                                            <form asp-controller="Reservation" asp-action="ApproveReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                                <button type="submit" class="btn-xs bx-ok" data-tip="Onayla">
+                                                    <i class="bi bi-check-lg"></i>
+                                                </button>
+                                            </form>
+                                            <form asp-controller="Reservation" asp-action="PendingReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                                <button type="submit" class="btn-xs bx-cancel" data-tip="Beklet">
+                                                    <i class="bi bi-hourglass-split"></i>
+                                                </button>
+                                            </form>
+                                            <form asp-controller="Reservation" asp-action="CancelReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                                <button type="submit" class="btn-xs bx-cancel" data-tip="İptal Et">
+                                                    <i class="bi bi-x-lg"></i>
+                                                </button>
+                                            </form>
+                                            <form asp-controller="Reservation" asp-action="DeleteReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                                <button type="submit" class="btn-xs bx-del" data-tip="Sil">
+                                                    <i class="bi bi-trash3-fill"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

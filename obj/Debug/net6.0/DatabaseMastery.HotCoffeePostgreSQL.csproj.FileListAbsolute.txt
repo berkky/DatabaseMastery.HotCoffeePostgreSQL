@@ -41,7 +41,6 @@ C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\Database
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\DatabaseMastery.HotCoffeePostgreSQL.pdb
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\DatabaseMastery.HotCoffeePostgreSQL.genruntimeconfig.cache
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\ref\DatabaseMastery.HotCoffeePostgreSQL.dll
-C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\bin\Debug\net6.0\DatabaseMastery.HotCoffeePostgreSQL.staticwebassets.endpoints.json
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\rpswa.dswa.cache.json
 C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\obj\Debug\net6.0\DatabaseMastery.HotCoffeePostgreSQL.sourcelink.json

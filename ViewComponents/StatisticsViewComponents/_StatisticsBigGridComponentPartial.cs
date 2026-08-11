@@ -1,4 +1,5 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.StatisticsViewComponents
@@ -26,9 +27,9 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.StatisticsViewCompo
             ViewBag.totalReview = _context.Reviews.Count();
 
             // Günlük ortalama rezervasyon (son 30 gün)
-            var thirtyDaysAgo = DateTime.UtcNow.Date.AddDays(-30);
+            var thirtyDaysAgo = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.UtcNow).AddDays(-30);
             var last30Count = _context.Reservations
-                .Count(r => r.ReservationDate.Date >= thirtyDaysAgo);
+                .Count(r => r.ReservationDate >= thirtyDaysAgo);
             ViewBag.dailyAvgReservation = Math.Round((double)last30Count / 30, 1);
 
             return View();

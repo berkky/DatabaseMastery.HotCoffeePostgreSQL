@@ -613,6 +613,7 @@
 </div>
 
 <form asp-action="CreateReview" method="post" id="reviewForm" novalidate>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-layout">
 
         <!-- ═══════════ SOL KOLON ═══════════ -->
@@ -749,34 +750,6 @@
         <!-- ═══════════ SAĞ KOLON ═══════════ -->
         <div>
 
-            <!-- ONAY DURUMU -->
-            <div class="form-card">
-                <div class="card-header">
-                    <div class="card-header-icon" style="background:#f5f2ee;">
-                        <i class="bi bi-shield-check" style="color:#aaa;"></i>
-                    </div>
-                    <div>
-                        <p class="card-header-title">Yayın Durumu</p>
-                        <p class="card-header-sub">Yorum sitede görünsün mü?</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <input asp-for="Status" type="hidden" id="hiddenStatus" value="true" />
-                    <div class="status-picker">
-                        <label class="status-option sel-active" id="opt-active" onclick="selectStatus(true)">
-                            <span class="so-dot" style="background:var(--green);"></span>
-                            <span class="so-label">Yayında</span>
-                            <i class="bi bi-check-circle-fill so-check" style="color:var(--green);"></i>
-                        </label>
-                        <label class="status-option" id="opt-passive" onclick="selectStatus(false)">
-                            <span class="so-dot" style="background:var(--red);"></span>
-                            <span class="so-label">Gizli</span>
-                            <i class="bi bi-check-circle-fill so-check" style="color:var(--red);"></i>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
             <!-- ÖZET -->
             <div class="summary-card" style="margin-bottom:16px;">
                 <div class="summary-title">
@@ -887,6 +860,7 @@
 </form>
 
 @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
     <script>
         var currentRating = 0;
 
@@ -914,14 +888,6 @@
         function setRating(val) {
             document.getElementById('s' + val).checked = true;
             onStarChange(val);
-        }
-
-        /* ── STATUS ── */
-        function selectStatus(isActive) {
-            document.getElementById('hiddenStatus').value = isActive;
-            document.getElementById('opt-active').className  = 'status-option' + (isActive  ? ' sel-active'  : '');
-            document.getElementById('opt-passive').className = 'status-option' + (!isActive ? ' sel-passive' : '');
-            updateSummary();
         }
 
         /* ── LIVE SUMMARY ── */
@@ -958,9 +924,8 @@
                 sumComment.textContent = '—';
             }
 
-            // Durum
-            var isActive = document.getElementById('hiddenStatus').value === 'true';
-            document.getElementById('sumStatus').textContent = isActive ? 'Yayında' : 'Gizli';
+            // Durum — server assigns publication status
+            document.getElementById('sumStatus').textContent = 'Yayında';
         }
 
         // Chip hover label

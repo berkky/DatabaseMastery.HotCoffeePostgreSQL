@@ -1,0 +1,232 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.EntryPointFilePath = 
+build_property.RootNamespace = DatabaseMastery.HotCoffeePostgreSQL
+build_property.RootNamespace = DatabaseMastery.HotCoffeePostgreSQL
+build_property.ProjectDir = C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 10.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Berk\OneDrive - baskent.edu.tr\Belgeler\GitHub\DatabaseMastery\DatabaseMastery.HotCoffeePostgreSQL
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/AdminLayout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Category/CategoryCardList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlDYXJkTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Category/CategoryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Category/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Category/UpdateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Menu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Product/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Product/ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Product/UpdateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxVcGRhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Reservation/CreateReservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cQ3JlYXRlUmVzZXJ2YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Reservation/ReservationList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cUmVzZXJ2YXRpb25MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Reservation/UpdateReservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cVXBkYXRlUmVzZXJ2YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/CreateReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XENyZWF0ZVJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/ReviewList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlld0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/UpdateReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFVwZGF0ZVJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_ChartComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NoYXJ0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardBarChartComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZEJhckNoYXJ0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardHeaderComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZEhlYWRlckNvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardLastReservationsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZExhc3RSZXNlcnZhdGlvbnNDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardLineChartComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZExpbmVDaGFydENvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardPieChartComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZFBpZUNoYXJ0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardQuickActionsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZFF1aWNrQWN0aW9uc0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_DashboardStatisticsCardsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZFN0YXRpc3RpY3NDYXJkc0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuFooterComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVGb290ZXJDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuHeadComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVIZWFkQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuListComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVMaXN0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuMobileComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVNb2JpbGVDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuNavbarComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVOYXZiYXJDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuScriptsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVTY3JpcHRzQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_MenuTopImageSectionComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX01lbnVUb3BJbWFnZVNlY3Rpb25Db21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsBigGridComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NCaWdHcmlkQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsCategoryTableComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NDYXRlZ29yeVRhYmxlQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsHeatmapComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NIZWF0bWFwQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsHeroComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NIZXJvQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsKpiComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NLcGlDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsRatingDistComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NSYXRpbmdEaXN0Q29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsReservationStatusComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NSZXNlcnZhdGlvblN0YXR1c0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_StatisticsTopProductsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1N0YXRpc3RpY3NUb3BQcm9kdWN0c0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/_AdminFlashMessagesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkZsYXNoTWVzc2FnZXNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Statistics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlzdGljc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-l7jwkztbfa

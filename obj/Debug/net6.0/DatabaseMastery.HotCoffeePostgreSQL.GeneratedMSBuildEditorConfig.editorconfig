@@ -23,6 +23,14 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 6.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/AdminLayout/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -89,6 +97,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/ReviewList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFJldmlld0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Review/UpdateReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFVwZGF0ZVJldmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Components/_ChartComponentPartial/Default.cshtml]
@@ -185,6 +197,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/_AdminFlashMessagesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkZsYXNoTWVzc2FnZXNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Berk/OneDrive - baskent.edu.tr/Belgeler/GitHub/DatabaseMastery/DatabaseMastery.HotCoffeePostgreSQL/Views/Shared/_ValidationScriptsPartial.cshtml]

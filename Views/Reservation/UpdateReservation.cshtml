@@ -640,7 +640,8 @@
     </a>
 </div>
 
-<form asp-action="UpdateReservation" method="post" id="resForm" novalidate>
+<form asp-action="UpdateReservation" asp-route-id="@Model.ReservationId" method="post" id="resForm" novalidate>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-layout">
         
 

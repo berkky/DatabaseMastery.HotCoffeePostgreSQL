@@ -448,6 +448,7 @@
 <!-- FORM -->
 <form id="addForm" asp-action="CreateCategory" asp-controller="Category" method="post" enctype="multipart/form-data" novalidate>
     @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="add-layout">
 
@@ -484,6 +485,7 @@
                                    oninput="onName(this)" />
                             <span class="char-count" id="nameCount">0/50</span>
                         </div>
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
                         <div class="f-err" id="nameErr">
                             <i class="bi bi-exclamation-circle-fill"></i> Kategori adı boş bırakılamaz.
                         </div>
@@ -583,6 +585,7 @@
                                    placeholder="https://ornek.com/gorsel.jpg"
                                    oninput="onUrl(this)" />
                         </div>
+                        <span asp-validation-for="CategoryImageUrl" class="text-danger"></span>
                         <div class="f-hint">
                             <i class="bi bi-info-circle"></i>
                             Harici bir görsel bağlantısı girebilirsiniz.
@@ -655,6 +658,7 @@
 </form>
 
 @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 <script>
     /* Name input */
     function onName(el) {

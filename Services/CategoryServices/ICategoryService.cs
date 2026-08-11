@@ -1,4 +1,5 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.CategoryDtos;
+using DatabaseMastery.HotCoffeePostgreSQL.Services;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.CategoryServices
 {
@@ -6,8 +7,9 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.CategoryServices
     {
         Task<List<ResultCategoryDto>> GetAllCategoriesAsync();
         Task<GetCategoryByIdDto> GetCategoryByIdAsync(int id);
+        Task<bool> CategoryExistsAsync(int id);
         Task CreateCategoryAsync(CreateCategoryDto createCategoryDto);
-        Task UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto);
-        Task DeleteCategoryAsync(int id);
+        Task<bool> UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto);
+        Task<DeleteOperationResult> DeleteCategoryAsync(int id);
     }
 }

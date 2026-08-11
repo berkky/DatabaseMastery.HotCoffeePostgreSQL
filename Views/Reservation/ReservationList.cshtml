@@ -1185,20 +1185,23 @@
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
 
-                                    <a href="/Reservation/ApproveReservation/@r.ReservationId"
-                                       class="btn-act approve" data-tip="Onayla">
-                                        <i class="bi bi-check-lg"></i>
-                                    </a>
+                                    <form asp-controller="Reservation" asp-action="ApproveReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                        <button type="submit" class="btn-act approve" data-tip="Onayla">
+                                            <i class="bi bi-check-lg"></i>
+                                        </button>
+                                    </form>
 
-                                    <a href="/Reservation/PendingReservation/@r.ReservationId"
-                                       class="btn-act pending" data-tip="Beklet">
-                                        <i class="bi bi-hourglass-split"></i>
-                                    </a>
+                                    <form asp-controller="Reservation" asp-action="PendingReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                        <button type="submit" class="btn-act pending" data-tip="Beklet">
+                                            <i class="bi bi-hourglass-split"></i>
+                                        </button>
+                                    </form>
 
-                                    <a href="/Reservation/CancelReservation/@r.ReservationId"
-                                       class="btn-act cancel" data-tip="İptal Et">
-                                        <i class="bi bi-x-lg"></i>
-                                    </a>
+                                    <form asp-controller="Reservation" asp-action="CancelReservation" asp-route-id="@r.ReservationId" method="post" class="d-inline">
+                                        <button type="submit" class="btn-act cancel" data-tip="İptal Et">
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                    </form>
 
                                     <button class="btn-act del" data-tip="Sil"
                                             onclick="confirmDelete(@r.ReservationId, '@r.Name')">
@@ -1249,10 +1252,13 @@
                 <p style="font-size:12px;color:#ccc;margin-bottom:0;">Bu işlem geri alınamaz.</p>
             </div>
             <div class="del-mf">
-                <button class="btn-cancel-m" data-bs-dismiss="modal">Vazgeç</button>
-                <a id="delLink" href="#" class="btn-del-ok">
-                    <i class="bi bi-trash3-fill"></i> Evet, Sil
-                </a>
+                <button class="btn-cancel-m" type="button" data-bs-dismiss="modal">Vazgeç</button>
+                <form asp-controller="Reservation" asp-action="DeleteReservation" method="post" class="m-0 flex-fill">
+                    <input type="hidden" name="id" id="delReservationId" value="0" />
+                    <button type="submit" class="btn-del-ok w-100">
+                        <i class="bi bi-trash3-fill"></i> Evet, Sil
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -1437,7 +1443,7 @@
         /* ─── DELETE ─────────────────────────────────────── */
         function confirmDelete(id, name) {
             document.getElementById('delResName').textContent = name;
-            document.getElementById('delLink').href = '/Reservation/DeleteReservation/' + id;
+            document.getElementById('delReservationId').value = id;
             new bootstrap.Modal(document.getElementById('deleteModal')).show();
         }
     </script>

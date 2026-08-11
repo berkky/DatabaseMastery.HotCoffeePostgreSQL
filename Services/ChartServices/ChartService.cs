@@ -1,5 +1,6 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ChartDtos;
+using DatabaseMastery.HotCoffeePostgreSQL.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices
@@ -15,18 +16,22 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices
 
         public async Task<List<ReservationChartDto>> GetLast7DaysReservationCountAsync()
         {
-            var today = DateTime.UtcNow.Date;
-            var endDate = today.AddDays(6);
+            var today = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.UtcNow);
+            var endExclusive = today.AddDays(7);
 
-            var reservations = await _context.Reservations
-                .Where(r => r.ReservationDate.Date >= today && r.ReservationDate.Date <= endDate)
-                .GroupBy(r => r.ReservationDate.Date)
+            var reservationDates = await _context.Reservations
+                .Where(r => r.ReservationDate >= today && r.ReservationDate < endExclusive)
+                .Select(r => r.ReservationDate)
+                .ToListAsync();
+
+            var reservations = reservationDates
+                .GroupBy(d => d.Date)
                 .Select(g => new ReservationChartDto
                 {
                     Day = g.Key.ToString("dd MMM"),
                     Count = g.Count()
                 })
-                .ToListAsync();
+                .ToList();
 
             var result = Enumerable.Range(0, 7)
                 .Select(i =>

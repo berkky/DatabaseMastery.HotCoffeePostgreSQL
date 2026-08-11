@@ -6,11 +6,12 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
     {
         Task<List<ResultReservationDto>> GetAllReservationsAsync();
         Task<GetReservationByIdDto?> GetReservationByIdAsync(int id);
+        Task<bool> ReservationExistsAsync(int id);
         Task CreateReservationAsync(CreateReservationDto createReservationDto);
-        Task UpdateReservationAsync(UpdateReservationDto updateReservationDto);
-        Task DeleteReservationAsync(int id);
-        Task ChangeReservationStatusToPending(int id);
-        Task ChangeReservationStatusToApproval(int id);
-        Task ChangeReservationStatusToCancel(int id);
+        Task<bool> UpdateReservationAsync(UpdateReservationDto updateReservationDto);
+        Task<bool> DeleteReservationAsync(int id);
+        Task<bool> ChangeReservationStatusToPending(int id);
+        Task<bool> ChangeReservationStatusToApproval(int id);
+        Task<bool> ChangeReservationStatusToCancel(int id);
     }
 }

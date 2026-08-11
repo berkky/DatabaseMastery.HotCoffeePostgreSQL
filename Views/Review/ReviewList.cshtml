@@ -481,6 +481,9 @@
         text-decoration: none;
         transition: var(--tr);
         position: relative;
+        padding: 0;
+        background: transparent;
+        line-height: 1;
     }
 
         .btn-act::after {
@@ -875,6 +878,8 @@
     }
 </style>
 
+<partial name="_AdminFlashMessagesPartial" />
+
 <!-- ── PAGE HEADER ── -->
 <div class="pg-header">
     <div>
@@ -1114,17 +1119,28 @@
                             </td>
                             <td class="col-act">
                                 <div class="act-group">
-                                    <a href="#"
+                                    <a asp-action="UpdateReview" asp-route-id="@r.ReviewId"
                                        class="btn-act edit" data-tip="Düzenle">
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
-                                    <a href="#"
-                                       class="btn-act @(r.Status ? "toggle-on" : "toggle-off")"
-                                       data-tip="@(r.Status ? "Gizle" : "Yayınla")">
-                                        <i class="bi bi-@(r.Status ? "eye-slash-fill" : "eye-fill")"></i>
-                                    </a>
-                                    <button class="btn-act del" data-tip="Sil"
-                                            onclick="confirmDelete(@r.ReviewId, '@r.CustomerName')">
+                                    @if (r.Status)
+                                    {
+                                        <form asp-action="HideReview" asp-route-id="@r.ReviewId" method="post" class="m-0 d-inline">
+                                            <button type="submit" class="btn-act toggle-on" data-tip="Gizle">
+                                                <i class="bi bi-eye-slash-fill"></i>
+                                            </button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <form asp-action="PublishReview" asp-route-id="@r.ReviewId" method="post" class="m-0 d-inline">
+                                            <button type="submit" class="btn-act toggle-off" data-tip="Yayınla">
+                                                <i class="bi bi-eye-fill"></i>
+                                            </button>
+                                        </form>
+                                    }
+                                    <button type="button" class="btn-act del" data-tip="Sil"
+                                            onclick="confirmDelete(@r.ReviewId, '@r.CustomerName.Replace("'", "\\'")')">
                                         <i class="bi bi-trash3-fill"></i>
                                     </button>
                                 </div>
@@ -1158,10 +1174,13 @@
                 <p style="font-size:12px;color:#ccc;margin-bottom:0;">Bu işlem geri alınamaz.</p>
             </div>
             <div class="del-mf">
-                <button class="btn-cancel-m" data-bs-dismiss="modal">Vazgeç</button>
-                <a id="delLink" href="#" class="btn-del-ok">
-                    <i class="bi bi-trash3-fill"></i> Evet, Sil
-                </a>
+                <button class="btn-cancel-m" type="button" data-bs-dismiss="modal">Vazgeç</button>
+                <form asp-controller="Review" asp-action="DeleteReview" method="post" class="m-0 flex-fill">
+                    <input type="hidden" name="id" id="delReviewId" value="0" />
+                    <button type="submit" class="btn-del-ok w-100">
+                        <i class="bi bi-trash3-fill"></i> Evet, Sil
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -1305,7 +1324,7 @@
 
         function confirmDelete(id, name) {
             document.getElementById('delName').textContent = name;
-            document.getElementById('delLink').href = '#';
+            document.getElementById('delReviewId').value = id;
             new bootstrap.Modal(document.getElementById('deleteModal')).show();
         }
     </script>

@@ -1,7 +1,6 @@
-using AutoMapper;
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
-using DatabaseMastery.HotCoffeePostgreSQL.Entities;
+using DatabaseMastery.HotCoffeePostgreSQL.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
@@ -9,46 +8,52 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
     public class ReservationService : IReservationService
     {
         private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
 
-        public ReservationService(AppDbContext context, IMapper mapper)
+        public ReservationService(AppDbContext context)
         {
             _context = context;
-            _mapper = mapper;
+        }
+
+        public async Task<bool> ReservationExistsAsync(int id)
+        {
+            return await _context.Reservations.AnyAsync(x => x.ReservationId == id);
         }
 
         public async Task<List<ResultReservationDto>> GetAllReservationsAsync()
         {
             var values = await _context.Reservations
+                .AsNoTracking()
                 .OrderBy(x => x.ReservationId)
                 .ToListAsync();
-            return _mapper.Map<List<ResultReservationDto>>(values);
+            return EntityMappers.ToResultReservationDtos(values);
         }
 
         public async Task<GetReservationByIdDto?> GetReservationByIdAsync(int id)
         {
-            var value = await _context.Reservations.FindAsync(id);
+            var value = await _context.Reservations
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.ReservationId == id);
             if (value == null)
             {
                 return null;
             }
 
-            return _mapper.Map<GetReservationByIdDto>(value);
+            return EntityMappers.ToGetByIdDto(value);
         }
 
         public async Task CreateReservationAsync(CreateReservationDto createReservationDto)
         {
-            var value = _mapper.Map<Reservation>(createReservationDto);
+            var value = EntityMappers.ToEntity(createReservationDto);
             await _context.Reservations.AddAsync(value);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateReservationAsync(UpdateReservationDto updateReservationDto)
+        public async Task<bool> UpdateReservationAsync(UpdateReservationDto updateReservationDto)
         {
             var reservation = await _context.Reservations.FindAsync(updateReservationDto.ReservationId);
             if (reservation == null)
             {
-                return;
+                return false;
             }
 
             reservation.Name = updateReservationDto.Name;
@@ -61,57 +66,62 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
             reservation.Description = updateReservationDto.Description;
 
             await _context.SaveChangesAsync();
+            return true;
         }
 
-        public async Task DeleteReservationAsync(int id)
+        public async Task<bool> DeleteReservationAsync(int id)
         {
             var value = await _context.Reservations.FindAsync(id);
             if (value == null)
             {
-                return;
+                return false;
             }
 
             _context.Reservations.Remove(value);
             await _context.SaveChangesAsync();
+            return true;
         }
 
-        public async Task ChangeReservationStatusToPending(int id)
+        public async Task<bool> ChangeReservationStatusToPending(int id)
         {
             var reservation = await _context.Reservations.FindAsync(id);
 
             if (reservation == null)
             {
-                return;
+                return false;
             }
 
             reservation.Status = "Beklemede";
             await _context.SaveChangesAsync();
+            return true;
         }
 
-        public async Task ChangeReservationStatusToApproval(int id)
+        public async Task<bool> ChangeReservationStatusToApproval(int id)
         {
             var reservation = await _context.Reservations.FindAsync(id);
 
             if (reservation == null)
             {
-                return;
+                return false;
             }
 
             reservation.Status = "Onaylandı";
             await _context.SaveChangesAsync();
+            return true;
         }
 
-        public async Task ChangeReservationStatusToCancel(int id)
+        public async Task<bool> ChangeReservationStatusToCancel(int id)
         {
             var reservation = await _context.Reservations.FindAsync(id);
 
             if (reservation == null)
             {
-                return;
+                return false;
             }
 
             reservation.Status = "İptal Edildi";
             await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

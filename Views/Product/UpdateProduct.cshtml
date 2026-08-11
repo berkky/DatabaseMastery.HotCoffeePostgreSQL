@@ -1008,11 +1008,13 @@
 
 <!-- FORM -->
 <form id="prodForm" asp-action="UpdateProduct" asp-controller="Product"
+      asp-route-id="@Model.ProductId"
       method="post" enctype="multipart/form-data" novalidate>
 
       <input type="hidden" asp-for="ProductId" />
 
     @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="add-layout">
 
@@ -1046,6 +1048,7 @@
                                        oninput="onName(this)" />
                                 <span class="char-count" id="nameCount">0/100</span>
                             </div>
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
                             <div class="f-err" id="nameErr"><i class="bi bi-exclamation-circle-fill"></i> Ürün adı zorunludur.</div>
                         </div>
                     </div>
@@ -1064,6 +1067,7 @@
                                       oninput="onDesc(this)"></textarea>
                             <div class="char-count-ta" id="descCount">0/300</div>
                         </div>
+                        <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
 
                     <!-- Kategori -->
@@ -1082,6 +1086,7 @@
                                     <option value="">— Kategori seçin —</option>
                                 </select>
                             </div>
+                            <span asp-validation-for="CategoryId" class="text-danger"></span>
                             <div class="f-err" id="catErr"><i class="bi bi-exclamation-circle-fill"></i> Lütfen bir kategori seçin.</div>
                         </div>
                     </div>
@@ -1115,6 +1120,7 @@
                                        oninput="onPrice(this)" />
                                 <span class="fi-suf">₺</span>
                             </div>
+                            <span asp-validation-for="Price" class="text-danger"></span>
                             <div class="f-err" id="priceErr"><i class="bi bi-exclamation-circle-fill"></i> Geçerli bir fiyat girin.</div>
                             <div class="price-preview" id="pricePreview">
                                 <i class="bi bi-tag-fill"></i>
@@ -1204,6 +1210,7 @@
                                        placeholder="https://ornek.com/gorsel.jpg"
                                        oninput="onUrl(this)" />
                             </div>
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
                             <div class="f-hint"><i class="bi bi-info-circle"></i>Harici bir görsel bağlantısı girebilirsiniz.</div>
                         </div>
                     </div>
@@ -1282,7 +1289,8 @@
 </form>
 
 @section Scripts {
-    <script>
+    <partial name="_ValidationScriptsPartial" />
+<script>
         /* ── NAME ── */
         function onName(el) {
             document.getElementById('nameCount').textContent = el.value.length + '/100';

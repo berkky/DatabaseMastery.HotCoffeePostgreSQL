@@ -632,6 +632,7 @@
 </div>
 
 <form asp-action="CreateReservation" method="post" id="resForm" novalidate>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-layout">
 
         <!-- ═══════════════════ SOL KOLON ═══════════════════ -->
@@ -776,39 +777,6 @@
         <!-- ═══════════════════ SAĞ KOLON ═══════════════════ -->
         <div class="sidebar-col">
 
-            <!-- DURUM SEÇİCİ -->
-            <div class="form-card" style="margin-bottom:16px;">
-                <div class="card-header">
-                    <div class="card-header-icon" style="background:#f5f2ee;">
-                        <i class="bi bi-toggle-on" style="color:#aaa;"></i>
-                    </div>
-                    <div>
-                        <p class="card-header-title">Rezervasyon Durumu</p>
-                        <p class="card-header-sub">Başlangıç durumunu seçin.</p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <input asp-for="Status" type="hidden" id="hiddenStatus" value="Beklemede" />
-                    <div class="status-picker">
-                        <label class="status-option selected-beklemede" id="opt-beklemede" onclick="selectStatus('Beklemede')">
-                            <span class="so-dot" style="background:#f59e0b;"></span>
-                            <span class="so-label">Beklemede</span>
-                            <i class="bi bi-check-circle-fill so-check" style="color:#f59e0b;"></i>
-                        </label>
-                        <label class="status-option" id="opt-onaylandi" onclick="selectStatus('Onaylandı')">
-                            <span class="so-dot" style="background:var(--green);"></span>
-                            <span class="so-label">Onaylandı</span>
-                            <i class="bi bi-check-circle-fill so-check" style="color:var(--green);"></i>
-                        </label>
-                        <label class="status-option" id="opt-iptal" onclick="selectStatus('İptal Edildi')">
-                            <span class="so-dot" style="background:var(--red);"></span>
-                            <span class="so-label">İptal Edildi</span>
-                            <i class="bi bi-check-circle-fill so-check" style="color:var(--red);"></i>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
             <!-- ÖZET KARTI -->
             <div class="summary-card">
                 <div class="summary-title">
@@ -916,34 +884,6 @@
             updateSummary();
         }
 
-        /* ── STATUS SELECTOR ── */
-        var statusMap = {
-            'Beklemede':    'opt-beklemede',
-            'Onaylandı':    'opt-onaylandi',
-            'İptal Edildi': 'opt-iptal'
-        };
-        var statusClassMap = {
-            'Beklemede':    'selected-beklemede',
-            'Onaylandı':    'selected-onaylandi',
-            'İptal Edildi': 'selected-iptal'
-        };
-
-        function selectStatus(val) {
-            document.getElementById('hiddenStatus').value = val;
-
-            // Reset all
-            Object.keys(statusMap).forEach(function(k) {
-                var el = document.getElementById(statusMap[k]);
-                el.className = 'status-option';
-            });
-
-            // Activate selected
-            var target = document.getElementById(statusMap[val]);
-            if (target) target.classList.add(statusClassMap[val]);
-
-            updateSummary();
-        }
-
         /* ── LIVE SUMMARY ── */
         var TR_DAYS   = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
         var TR_MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
@@ -975,8 +915,8 @@
             var guest = parseInt(document.getElementById('inpGuest').value) || 2;
             document.getElementById('sumGuest').textContent = guest + ' kişi';
 
-            /* Status */
-            document.getElementById('sumStatus').textContent = document.getElementById('hiddenStatus').value;
+            /* Status — server assigns Beklemede for public reservations */
+            document.getElementById('sumStatus').textContent = 'Beklemede';
         }
 
         /* ── SET MIN DATE (today) ── */

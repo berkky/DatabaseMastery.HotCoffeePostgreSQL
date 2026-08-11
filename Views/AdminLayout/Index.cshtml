@@ -1,5 +1,9 @@
 @{
     Layout = null;
+    var adminDisplayName = User.Identity?.Name ?? "Admin";
+    var adminInitial = adminDisplayName.Length > 0
+        ? adminDisplayName.Substring(0, 1).ToUpperInvariant()
+        : "A";
 }
 
 <!DOCTYPE html>
@@ -723,9 +727,9 @@
         <!-- User Footer -->
         <div class="sidebar-footer">
             <div class="sidebar-user">
-                <div class="user-avatar">A</div>
+                <div class="user-avatar">@adminInitial</div>
                 <div class="user-info">
-                    <div class="user-name">Admin</div>
+                    <div class="user-name">@adminDisplayName</div>
                     <div class="user-role">Yönetici</div>
                 </div>
             </div>
@@ -860,15 +864,15 @@
                 <!-- User Profile -->
                 <div class="navbar-dropdown dropdown">
                     <button class="user-nav-btn dropdown-toggle" data-bs-toggle="dropdown">
-                        <div class="user-nav-avatar">A</div>
-                        <span class="user-nav-name d-none d-sm-inline">Admin</span>
+                        <div class="user-nav-avatar">@adminInitial</div>
+                        <span class="user-nav-name d-none d-sm-inline">@adminDisplayName</span>
                         <i class="bi bi-chevron-down user-nav-chevron"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <div style="padding:10px 14px 12px;border-bottom:1px solid #f0f0f0;margin-bottom:6px;">
-                                <div style="font-size:13.5px;font-weight:700;color:#1a1a1a;">Admin Kullanıcı</div>
-                                <div style="font-size:11.5px;color:#888;">admin@lezzetbahcesi.com</div>
+                                <div style="font-size:13.5px;font-weight:700;color:#1a1a1a;">@adminDisplayName</div>
+                                <div style="font-size:11.5px;color:#888;">Yönetici hesabı</div>
                             </div>
                         </li>
                         <li>
@@ -885,10 +889,12 @@
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a class="dropdown-item" href="#" style="color:#e74c3c;">
-                                <i class="bi bi-box-arrow-right" style="color:#e74c3c;"></i>
-                                Çıkış Yap
-                            </a>
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="m-0">
+                                <button type="submit" class="dropdown-item" style="color:#e74c3c;border:none;background:none;width:100%;text-align:left;">
+                                    <i class="bi bi-box-arrow-right" style="color:#e74c3c;"></i>
+                                    Çıkış Yap
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>

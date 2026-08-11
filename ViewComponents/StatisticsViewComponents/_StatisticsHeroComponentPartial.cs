@@ -1,4 +1,5 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.StatisticsViewComponents
@@ -20,13 +21,13 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.StatisticsViewCompo
             ViewBag.activeProduct = _context.Products.Where(x => x.Status == true).Count();
             ViewBag.categoryCount=_context.Categories.Count();
 
-            var today = DateTime.UtcNow.Date;
+            var today = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.UtcNow);
             var startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek.Monday);
             var endOfWeek = startOfWeek.AddDays(7);
 
             ViewBag.thisWeekTotalGuestCount = _context.Reservations
-                .Where(r => r.ReservationDate.Date >= startOfWeek
-                         && r.ReservationDate.Date < endOfWeek
+                .Where(r => r.ReservationDate >= startOfWeek
+                         && r.ReservationDate < endOfWeek
                          && r.Status == "Onaylandı")
                 .Sum(r => r.GuestCount);
 

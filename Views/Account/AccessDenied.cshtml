@@ -1,0 +1,62 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Erişim Reddedildi";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — HotCoffee</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #141210;
+            color: #f5f0ea;
+            font-family: "Segoe UI", system-ui, sans-serif;
+            padding: 24px;
+        }
+
+        .denied-card {
+            max-width: 420px;
+            background: #1e1a17;
+            border: 1px solid #3a322c;
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .denied-card h1 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .denied-card p {
+            color: #9a9088;
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 10px;
+            background: #e6a03c;
+            color: #1a1208;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="denied-card">
+        <h1>Erişim Reddedildi</h1>
+        <p>Bu sayfayı görüntüleme yetkiniz bulunmuyor.</p>
+        <a class="btn-back" asp-controller="Account" asp-action="Login">Giriş Sayfasına Dön</a>
+    </div>
+</body>
+</html>
