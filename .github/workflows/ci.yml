@@ -31,6 +31,9 @@ jobs:
         run: dotnet build DatabaseMastery.HotCoffeePostgreSQL.sln -c Release --no-restore
 
       - name: Test Release
+        env:
+          AdminAuth__Username: ci-admin
+          AdminAuth__Password: ci-test-password-not-for-production
         run: dotnet test DatabaseMastery.HotCoffeePostgreSQL.sln -c Release --no-build --verbosity normal
 
       - name: NuGet vulnerability gate

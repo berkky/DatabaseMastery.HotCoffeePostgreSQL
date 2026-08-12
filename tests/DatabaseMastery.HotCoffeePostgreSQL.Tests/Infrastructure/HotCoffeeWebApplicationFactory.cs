@@ -41,6 +41,13 @@ public sealed class HotCoffeeWebApplicationFactory : WebApplicationFactory<Progr
 
     private bool _seeded;
 
+    public HotCoffeeWebApplicationFactory()
+    {
+        // CreateBuilder validates AdminAuth before ConfigureAppConfiguration runs.
+        Environment.SetEnvironmentVariable("AdminAuth__Username", "factory-admin");
+        Environment.SetEnvironmentVariable("AdminAuth__Password", "factory-password");
+    }
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Development");
