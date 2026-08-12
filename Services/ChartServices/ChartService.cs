@@ -1,6 +1,7 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Domain;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ChartDtos;
-using DatabaseMastery.HotCoffeePostgreSQL.Services;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.Time;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices
@@ -8,51 +9,46 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices
     public class ChartService : IChartService
     {
         private readonly AppDbContext _context;
+        private readonly IBusinessClock _businessClock;
 
-        public ChartService(AppDbContext context)
+        public ChartService(AppDbContext context, IBusinessClock businessClock)
         {
             _context = context;
+            _businessClock = businessClock;
         }
 
         public async Task<List<ReservationChartDto>> GetLast7DaysReservationCountAsync()
         {
-            var today = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.UtcNow);
-            var endExclusive = today.AddDays(7);
+            var today = _businessClock.Today;
+            var startInclusive = today.AddDays(-6);
 
             var reservationDates = await _context.Reservations
-                .Where(r => r.ReservationDate >= today && r.ReservationDate < endExclusive)
+                .AsNoTracking()
+                .Where(r => r.ReservationDate >= startInclusive && r.ReservationDate <= today)
                 .Select(r => r.ReservationDate)
                 .ToListAsync();
 
-            var reservations = reservationDates
-                .GroupBy(d => d.Date)
-                .Select(g => new ReservationChartDto
-                {
-                    Day = g.Key.ToString("dd MMM"),
-                    Count = g.Count()
-                })
-                .ToList();
+            var grouped = reservationDates
+                .GroupBy(d => d)
+                .ToDictionary(g => g.Key, g => g.Count());
 
-            var result = Enumerable.Range(0, 7)
+            return Enumerable.Range(0, 7)
                 .Select(i =>
                 {
-                    var date = today.AddDays(i);
-                    var label = date.ToString("dd MMM");
-                    var found = reservations.FirstOrDefault(r => r.Day == label);
+                    var date = startInclusive.AddDays(i);
                     return new ReservationChartDto
                     {
-                        Day = label,
-                        Count = found?.Count ?? 0
+                        Day = TurkishDatePresentation.FormatDateShort(date),
+                        Count = grouped.TryGetValue(date, out var count) ? count : 0
                     };
                 })
                 .ToList();
-
-            return result;
         }
 
         public async Task<List<CategoryProductCountChartDto>> GetCategoryProductCountAsync()
         {
-            var result = await _context.Categories
+            return await _context.Categories
+                .AsNoTracking()
                 .Where(c => c.CategoryStatus)
                 .Select(c => new CategoryProductCountChartDto
                 {
@@ -60,13 +56,12 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices
                     ProductCount = c.Products.Count(p => p.Status)
                 })
                 .ToListAsync();
-
-            return result;
         }
 
         public async Task<List<CategoryAvgPriceChartDto>> GetCategoryAvgPriceAsync()
         {
-            var result = await _context.Categories
+            return await _context.Categories
+                .AsNoTracking()
                 .Where(c => c.CategoryStatus)
                 .Select(c => new CategoryAvgPriceChartDto
                 {
@@ -83,8 +78,6 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ChartServices
                 })
                 .OrderByDescending(c => c.AvgPrice)
                 .ToListAsync();
-
-            return result;
         }
     }
 }

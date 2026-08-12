@@ -1,0 +1,33 @@
+@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.AdminAnalyticsDtos.StatisticsOverviewDto
+
+<div class="col-xl-3">
+    <div class="sec-card" style="animation-delay:.22s;">
+        <div class="card-head">
+            <div class="ch-icon" style="background:var(--purple-soft);"><i class="bi bi-people-fill" style="color:var(--purple);"></i></div>
+            <div><div class="sec-title">Operasyon Metrikleri</div><div class="sec-sub">DB kaynaklı özet</div></div>
+        </div>
+        <div class="card-body">
+            <div class="mini-tl">
+                @{
+                    var mets = new[]
+                    {
+                        new { bg = "var(--blue-soft)", ic = "bi-people-fill", c = "var(--blue)", t = "Ort. Grup", s = "Kişi/rezervasyon", v = Model.AverageGroupSize.ToString("0.0") },
+                        new { bg = "var(--accent-soft)", ic = "bi-calendar-heart-fill", c = "var(--accent-dark)", t = "En Yoğun Gün", s = "Isı haritası", v = Model.Heatmap.PeakDayLabel },
+                        new { bg = "var(--teal-soft)", ic = "bi-clock-fill", c = "var(--teal)", t = "En Yoğun Saat", s = "Rezervasyon saati", v = Model.Heatmap.PeakHourLabel },
+                        new { bg = "var(--green-soft)", ic = "bi-person-check-fill", c = "var(--green)", t = "Bu Hafta Onaylı Misafir", s = "Onaylanan rezervasyonlar", v = Model.ThisWeekConfirmedGuestCount.ToString() },
+                        new { bg = "var(--yellow-soft)", ic = "bi-star-fill", c = "var(--yellow)", t = "Ortalama Puan", s = "Tüm değerlendirmeler", v = Model.AverageRating.ToString("0.0") },
+                        new { bg = "var(--purple-soft)", ic = "bi-eye-fill", c = "var(--purple)", t = "Yayındaki Yorum", s = "Yayın durumu", v = Model.PublishedReviews.ToString() },
+                    };
+                }
+                @foreach (var m in mets)
+                {
+                    <div class="mtl-item">
+                        <div class="mtl-icon" style="background:@m.bg;"><i class="bi @m.ic" style="color:@m.c;"></i></div>
+                        <div><div class="mtl-title">@m.t</div><div class="mtl-sub">@m.s</div></div>
+                        <div class="mtl-val">@m.v</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

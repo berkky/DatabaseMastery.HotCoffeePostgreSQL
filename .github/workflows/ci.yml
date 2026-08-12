@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Restore dotnet tools
+        run: dotnet tool restore
+
+      - name: Restore
+        run: dotnet restore DatabaseMastery.HotCoffeePostgreSQL.sln
+
+      - name: Build Release
+        run: dotnet build DatabaseMastery.HotCoffeePostgreSQL.sln -c Release --no-restore
+
+      - name: Test Release
+        run: dotnet test DatabaseMastery.HotCoffeePostgreSQL.sln -c Release --no-build --verbosity normal
+
+      - name: NuGet vulnerability gate
+        shell: pwsh
+        run: ./scripts/Test-NuGetVulnerabilities.ps1

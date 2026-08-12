@@ -1,95 +1,47 @@
-﻿@using System.IO
-@using System.Linq
-@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Env
-@model List<DatabaseMastery.HotCoffeePostgreSQL.Entities.Product>
-
+﻿@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.PublicRestaurantDtos.PublicLandingDto
+@using System.Globalization
 @{
-    const string fallbackImage = "/dina-html/images/img-default.png";
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
 }
 
-<!-- MAIN WRAP CONTENT -->
-<section id="menu-section" class="menu-1col-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-
-                @{
-                    var categories = Model
-                    .Where(p => p.Status && p.Category.CategoryStatus)
-                    .GroupBy(p => p.Category)
-                    .ToList();
-                }
-
-                <div id="categories-section"></div>
-
-                @foreach (var categoryGroup in categories)
-                {
-                    <!-- CATEGORY HEADER -->
-                    <div class="categ-name">
-                        <h2>@categoryGroup.Key.CategoryName</h2>
-                    </div>
-
-                    <div class="menu-holder menu-1col">
-
-                        @foreach (var product in categoryGroup)
+<section id="menu-section" class="hc-section">
+    <div class="hc-container">
+        @if (Model.Categories.Count == 0)
+        {
+            <div class="hc-empty" role="status">Menü şu anda güncelleniyor.</div>
+        }
+        else
+        {
+            @foreach (var category in Model.Categories)
+            {
+                <div class="hc-category-block" id="category-@category.CategoryId">
+                    <h3>@category.CategoryName</h3>
+                    <div class="hc-product-grid">
+                        @foreach (var product in category.Products)
                         {
-                            var imageUrl = product.ImageUrl;
-                            var hasLocalImage = false;
-                            if (!string.IsNullOrWhiteSpace(imageUrl) && !imageUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase))
-                            {
-                                var relative = imageUrl.TrimStart('~').TrimStart('/').Replace('/', System.IO.Path.DirectorySeparatorChar);
-                                var physical = System.IO.Path.Combine(Env.WebRootPath, relative);
-                                hasLocalImage = System.IO.File.Exists(physical);
-                            }
-                            var displaySrc = hasLocalImage ? imageUrl : fallbackImage;
-
-                            <div class="menu-post clearfix">
-                                <div class="menu-post-img">
-                                    @if (hasLocalImage)
+                            <article class="hc-product-card">
+                                <div class="hc-product-media">
+                                    @if (!string.IsNullOrWhiteSpace(product.ImageUrl))
                                     {
-                                        <a href="@imageUrl" class="lightbox" title="@product.ProductName">
-                                            <img width="104" height="104"
-                                                 src="@displaySrc"
-                                                 alt="@product.ProductName"
-                                                 title="@product.ProductName"
-                                                 loading="lazy"
-                                                 decoding="async"
-                                                 onerror="this.onerror=null;this.src='@fallbackImage';" />
-                                        </a>
+                                        <img src="@product.ImageUrl" alt="@product.ProductName" width="88" height="88" loading="lazy" />
                                     }
                                     else
                                     {
-                                        <span class="menu-thumb-wrap" aria-hidden="false">
-                                            <img width="104" height="104"
-                                                 src="@displaySrc"
-                                                 alt="@product.ProductName"
-                                                 title="@product.ProductName"
-                                                 loading="lazy"
-                                                 decoding="async"
-                                                 onerror="this.onerror=null;this.style.visibility='hidden';" />
-                                        </span>
+                                        <span class="hc-product-fallback" aria-hidden="true"></span>
                                     }
                                 </div>
-                                <div class="menu-post-desc">
-                                    <h4>
-                                        <span class="menu-title">@product.ProductName</span>
-                                        <span class="menu-dots"></span>
-                                        <span class="menu-price">₺ @product.Price.ToString("F2")</span>
-                                    </h4>
-                                    <div class="menu-text">@product.Description</div>
+                                <div>
+                                    <div class="hc-product-top">
+                                        <h4>@product.ProductName</h4>
+                                        <div class="hc-product-price">@product.Price.ToString("C", tr)</div>
+                                    </div>
+                                    <p class="hc-product-desc">@product.Description</p>
                                 </div>
-                            </div>
+                            </article>
                         }
-
                     </div>
-                    <!--menu-1-col-->
-                }
-
-            </div>
-            <!--col-md-10-->
-        </div>
-        <!--row-->
+                </div>
+            }
+        }
     </div>
-    <!--container-->
 </section>
-<!-- /MAIN WRAP CONTENT -->

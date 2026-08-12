@@ -1,0 +1,24 @@
+@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.AdminAnalyticsDtos.StatisticsOverviewDto
+
+<div class="metric-grid">
+    @{
+        var tiles = new[]
+        {
+            new { cls = "mt-amber", icon = "bi-calendar-day-fill", ic = "#c8861e", lbl = "Bugünkü Rez.", val = Model.TodayReservations.ToString() },
+            new { cls = "mt-sky", icon = "bi-calendar-week-fill", ic = "#2563eb", lbl = "Bu Haftaki Rez.", val = Model.ThisWeekReservations.ToString() },
+            new { cls = "mt-sage", icon = "bi-calendar-month-fill", ic = "#16a34a", lbl = "Bu Ayki Rez.", val = Model.ThisMonthReservations.ToString() },
+            new { cls = "mt-lemon", icon = "bi-eye-fill", ic = "#b45309", lbl = "Yayındaki Yorum", val = Model.PublishedReviews.ToString() },
+            new { cls = "mt-rose", icon = "bi-eye-slash-fill", ic = "#dc2626", lbl = "Gizli Yorum", val = Model.HiddenReviews.ToString() },
+            new { cls = "mt-mint", icon = "bi-basket3-fill", ic = "#0d9488", lbl = "Aktif Ürün", val = Model.ActiveProducts.ToString() },
+            new { cls = "mt-lavender", icon = "bi-tags-fill", ic = "#7c3aed", lbl = "Aktif Kategori", val = Model.ActiveCategories.ToString() },
+            new { cls = "mt-peach", icon = "bi-person-fill-check", ic = "#c2410c", lbl = "Toplam Misafir", val = Model.TotalGuestCount.ToString() },
+        };
+    }
+    @foreach (var t in tiles)
+    {
+        <div class="metric-tile @t.cls">
+            <div class="mt-icon"><i class="bi @t.icon" style="color:@t.ic;font-size:17px;"></i></div>
+            <div><div class="mt-num">@t.val</div><div class="mt-lbl">@t.lbl</div></div>
+        </div>
+    }
+</div>

@@ -2,6 +2,7 @@ using DatabaseMastery.HotCoffeePostgreSQL.Dtos.CategoryDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ProductDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReviewDtos;
+using DatabaseMastery.HotCoffeePostgreSQL.Domain;
 using DatabaseMastery.HotCoffeePostgreSQL.Entities;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Mapping
@@ -75,10 +76,10 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Mapping
             Name = dto.Name,
             Phone = dto.Phone,
             Email = dto.Email,
-            ReservationDate = dto.ReservationDate,
-            ReservationTime = dto.ReservationTime,
+            ReservationDate = dto.ReservationDate!.Value,
+            ReservationTime = dto.ReservationTime!.Value,
             GuestCount = dto.GuestCount,
-            Status = dto.Status,
+            Status = ReservationStatus.Pending,
             Description = dto.Description
         };
 

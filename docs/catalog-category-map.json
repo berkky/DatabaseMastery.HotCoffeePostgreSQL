@@ -1,0 +1,1329 @@
+{
+  "generatedAt": "STEP-10.5",
+  "source": "Requirements/ExampleDatas",
+  "products": [
+    {
+      "productId": 43,
+      "productName": "Izgara Tavuk",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/grilled-chicken.jpg"
+    },
+    {
+      "productId": 44,
+      "productName": "Kremal\u0131 Mantarl\u0131 Tavuk",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/creamy-mushroom-chicken.jpg"
+    },
+    {
+      "productId": 45,
+      "productName": "F\u0131r\u0131n Somon",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/baked-salmon.jpg"
+    },
+    {
+      "productId": 46,
+      "productName": "Dana Bonfile",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/beef-tenderloin.jpg"
+    },
+    {
+      "productId": 47,
+      "productName": "Et Sote",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/beef-saute.jpg"
+    },
+    {
+      "productId": 48,
+      "productName": "Sebzeli Tavuk",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/vegetable-chicken.jpg"
+    },
+    {
+      "productId": 49,
+      "productName": "BBQ Tavuk",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/bbq-chicken.jpg"
+    },
+    {
+      "productId": 50,
+      "productName": "Kuzu Tand\u0131r",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/lamb-tandoor.jpg"
+    },
+    {
+      "productId": 51,
+      "productName": "Dana Antrikot",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/ribeye.jpg"
+    },
+    {
+      "productId": 52,
+      "productName": "Tavuk Schnitzel",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chicken-schnitzel.jpg"
+    },
+    {
+      "productId": 53,
+      "productName": "Tavuk Fajita",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chicken-fajita.jpg"
+    },
+    {
+      "productId": 54,
+      "productName": "Et Fajita",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/beef-fajita.jpg"
+    },
+    {
+      "productId": 55,
+      "productName": "Sebzeli Noodle",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/noodle.jpg"
+    },
+    {
+      "productId": 56,
+      "productName": "F\u0131r\u0131n Tavuk",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/roasted-chicken.jpg"
+    },
+    {
+      "productId": 57,
+      "productName": "Mantarl\u0131 Bonfile",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mushroom-steak.jpg"
+    },
+    {
+      "productId": 58,
+      "productName": "Kremal\u0131 Somon",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/creamy-salmon.jpg"
+    },
+    {
+      "productId": 59,
+      "productName": "Sebzeli Bonfile",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/vegetable-steak.jpg"
+    },
+    {
+      "productId": 60,
+      "productName": "Teriyaki Tavuk",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/teriyaki-chicken.jpg"
+    },
+    {
+      "productId": 61,
+      "productName": "Kuzu Pirzola",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/lamb-chops.jpg"
+    },
+    {
+      "productId": 62,
+      "productName": "Izgara K\u00F6fte",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/grilled-meatballs.jpg"
+    },
+    {
+      "productId": 63,
+      "productName": "\u015Eefin Taba\u011F\u0131",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chef-plate.jpg"
+    },
+    {
+      "productId": 64,
+      "productName": "Kuzu \u015Ei\u015F",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/lamb-skewer.jpg"
+    },
+    {
+      "productId": 65,
+      "productName": "Tavuk Teriyaki",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chicken-teriyaki.jpg"
+    },
+    {
+      "productId": 66,
+      "productName": "Izgara Hindi",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/grilled-turkey.jpg"
+    },
+    {
+      "productId": 67,
+      "productName": "Sebzeli Tavuk Izgara",
+      "currentCategory": "Ana Yemekler",
+      "canonicalCategory": "Ana Yemekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chicken-grill-veg.jpg"
+    },
+    {
+      "productId": 1,
+      "productName": "Domatesli Bruschetta",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/bruschetta.jpg"
+    },
+    {
+      "productId": 2,
+      "productName": "Karides Tempura",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/shrimp-tempura.jpg"
+    },
+    {
+      "productId": 3,
+      "productName": "Avokado Salsa",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/avocado-salsa.jpg"
+    },
+    {
+      "productId": 4,
+      "productName": "F\u0131r\u0131n Patates Kabu\u011Fu",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/potato-skins.jpg"
+    },
+    {
+      "productId": 5,
+      "productName": "Mozzarella Stick",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mozzarella-stick.jpg"
+    },
+    {
+      "productId": 6,
+      "productName": "\u00C7\u0131t\u0131r So\u011Fan Halkas\u0131",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/onion-rings.jpg"
+    },
+    {
+      "productId": 7,
+      "productName": "Humus Taba\u011F\u0131",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/hummus.jpg"
+    },
+    {
+      "productId": 8,
+      "productName": "Patl\u0131can Ezmesi",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/eggplant-dip.jpg"
+    },
+    {
+      "productId": 9,
+      "productName": "Sigara B\u00F6re\u011Fi",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/sigara-boregi.jpg"
+    },
+    {
+      "productId": 10,
+      "productName": "Nachos Taba\u011F\u0131",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/nachos.jpg"
+    },
+    {
+      "productId": 11,
+      "productName": "Karides Kokteyl",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/shrimp-cocktail.jpg"
+    },
+    {
+      "productId": 12,
+      "productName": "Mini Burger",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mini-burger.jpg"
+    },
+    {
+      "productId": 13,
+      "productName": "Zeytinya\u011Fl\u0131 Enginar",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/artichoke.jpg"
+    },
+    {
+      "productId": 14,
+      "productName": "Peynir Taba\u011F\u0131",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/cheese-plate.jpg"
+    },
+    {
+      "productId": 15,
+      "productName": "Garlic Bread",
+      "currentCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "canonicalCategory": "Ba\u015Flang\u0131\u00E7lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/garlic-bread.jpg"
+    },
+    {
+      "productId": 16,
+      "productName": "Mercimek \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mercimek.jpg"
+    },
+    {
+      "productId": 17,
+      "productName": "Ezogelin \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/ezogelin.jpg"
+    },
+    {
+      "productId": 18,
+      "productName": "Domates \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/domates.jpg"
+    },
+    {
+      "productId": 19,
+      "productName": "Tavuk Suyu \u00C7orba",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tavuk-suyu.jpg"
+    },
+    {
+      "productId": 20,
+      "productName": "Mantar \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mantar.jpg"
+    },
+    {
+      "productId": 21,
+      "productName": "Sebze \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/sebze.jpg"
+    },
+    {
+      "productId": 22,
+      "productName": "Tarhana \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tarhana.jpg"
+    },
+    {
+      "productId": 23,
+      "productName": "Yo\u011Furt \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/yogurt-corbasi.jpg"
+    },
+    {
+      "productId": 24,
+      "productName": "Brokoli \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/brokoli.jpg"
+    },
+    {
+      "productId": 25,
+      "productName": "Bal\u0131k \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/balik-corbasi.jpg"
+    },
+    {
+      "productId": 26,
+      "productName": "Kremal\u0131 Tavuk \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/kremali-tavuk.jpg"
+    },
+    {
+      "productId": 27,
+      "productName": "D\u00FC\u011F\u00FCn \u00C7orbas\u0131",
+      "currentCategory": "\u00C7orbalar",
+      "canonicalCategory": "\u00C7orbalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/dugun.jpg"
+    },
+    {
+      "productId": 130,
+      "productName": "Kola",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/cola.jpg"
+    },
+    {
+      "productId": 131,
+      "productName": "Fanta",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/fanta.jpg"
+    },
+    {
+      "productId": 132,
+      "productName": "Sprite",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/sprite.jpg"
+    },
+    {
+      "productId": 133,
+      "productName": "Limonata",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/lemonade.jpg"
+    },
+    {
+      "productId": 134,
+      "productName": "Ice Tea \u015Eeftali",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/ice-tea-peach.jpg"
+    },
+    {
+      "productId": 135,
+      "productName": "Portakal Suyu",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/orange-juice.jpg"
+    },
+    {
+      "productId": 136,
+      "productName": "Elma Suyu",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/apple-juice.jpg"
+    },
+    {
+      "productId": 137,
+      "productName": "Soda",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/soda.jpg"
+    },
+    {
+      "productId": 138,
+      "productName": "Gazoz",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/gazoz.jpg"
+    },
+    {
+      "productId": 139,
+      "productName": "Ayran",
+      "currentCategory": "\u0130\u00E7ecekler",
+      "canonicalCategory": "\u0130\u00E7ecekler",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/ayran.jpg"
+    },
+    {
+      "productId": 68,
+      "productName": "Adana Kebap",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/adana.jpg"
+    },
+    {
+      "productId": 69,
+      "productName": "Urfa Kebap",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/urfa.jpg"
+    },
+    {
+      "productId": 70,
+      "productName": "Tavuk \u015Ei\u015F",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tavuk-sis.jpg"
+    },
+    {
+      "productId": 71,
+      "productName": "Kuzu \u015Ei\u015F",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/kuzu-sis.jpg"
+    },
+    {
+      "productId": 72,
+      "productName": "Izgara K\u00F6fte",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/izgara-kofte.jpg"
+    },
+    {
+      "productId": 73,
+      "productName": "Dana \u015Ei\u015F",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/dana-sis.jpg"
+    },
+    {
+      "productId": 74,
+      "productName": "Kuzu Pirzola Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/kuzu-pirzola.jpg"
+    },
+    {
+      "productId": 75,
+      "productName": "Tavuk Kanat",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tavuk-kanat.jpg"
+    },
+    {
+      "productId": 76,
+      "productName": "Kar\u0131\u015F\u0131k Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/karisik-izgara.jpg"
+    },
+    {
+      "productId": 77,
+      "productName": "Antrikot Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/antrikot.jpg"
+    },
+    {
+      "productId": 78,
+      "productName": "Bonfile Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/bonfile.jpg"
+    },
+    {
+      "productId": 79,
+      "productName": "Kuzu Kaburga",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/kaburga.jpg"
+    },
+    {
+      "productId": 80,
+      "productName": "Izgara Sucuk",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/sucuk.jpg"
+    },
+    {
+      "productId": 81,
+      "productName": "Izgara Tavuk Fileto",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tavuk-fileto.jpg"
+    },
+    {
+      "productId": 82,
+      "productName": "K\u00F6fte Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/kofte.jpg"
+    },
+    {
+      "productId": 83,
+      "productName": "Et \u015Ei\u015F Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/et-sis.jpg"
+    },
+    {
+      "productId": 84,
+      "productName": "Izgara Sebze",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/grilled-veg.jpg"
+    },
+    {
+      "productId": 85,
+      "productName": "Kuzu K\u00FC\u015Fleme",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/kusleme.jpg"
+    },
+    {
+      "productId": 86,
+      "productName": "Dana Kaburga Izgara",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/dana-kaburga.jpg"
+    },
+    {
+      "productId": 87,
+      "productName": "Izgara Tavuk Kanat",
+      "currentCategory": "Izgara \u0026 Et Yemekleri",
+      "canonicalCategory": "Izgara \u0026 Et Yemekleri",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/grilled-wings.jpg"
+    },
+    {
+      "productId": 140,
+      "productName": "Espresso",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/espresso.jpg"
+    },
+    {
+      "productId": 141,
+      "productName": "Americano",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/americano.jpg"
+    },
+    {
+      "productId": 142,
+      "productName": "Latte",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/latte.jpg"
+    },
+    {
+      "productId": 143,
+      "productName": "Cappuccino",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/cappuccino.jpg"
+    },
+    {
+      "productId": 144,
+      "productName": "Mocha",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mocha.jpg"
+    },
+    {
+      "productId": 145,
+      "productName": "T\u00FCrk Kahvesi",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/turkish-coffee.jpg"
+    },
+    {
+      "productId": 146,
+      "productName": "Filtre Kahve",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/filter-coffee.jpg"
+    },
+    {
+      "productId": 147,
+      "productName": "\u00C7ay",
+      "currentCategory": "Kahve \u0026 \u00C7ay",
+      "canonicalCategory": "Kahve \u0026 \u00C7ay",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tea.jpg"
+    },
+    {
+      "productId": 88,
+      "productName": "Spaghetti Bolognese",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/spaghetti-bolognese.jpg"
+    },
+    {
+      "productId": 89,
+      "productName": "Fettuccine Alfredo",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/fettuccine-alfredo.jpg"
+    },
+    {
+      "productId": 90,
+      "productName": "Penne Arrabbiata",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/penne-arrabbiata.jpg"
+    },
+    {
+      "productId": 91,
+      "productName": "Spaghetti Carbonara",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/carbonara.jpg"
+    },
+    {
+      "productId": 92,
+      "productName": "Lasagna",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/lasagna.jpg"
+    },
+    {
+      "productId": 93,
+      "productName": "Tagliatelle",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tagliatelle.jpg"
+    },
+    {
+      "productId": 94,
+      "productName": "Ravioli",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/ravioli.jpg"
+    },
+    {
+      "productId": 95,
+      "productName": "Pesto Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/pesto.jpg"
+    },
+    {
+      "productId": 96,
+      "productName": "Deniz Mahsull\u00FC Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/seafood-pasta.jpg"
+    },
+    {
+      "productId": 97,
+      "productName": "Kremal\u0131 Mantarl\u0131 Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mushroom-pasta.jpg"
+    },
+    {
+      "productId": 98,
+      "productName": "Tavuklu Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chicken-pasta.jpg"
+    },
+    {
+      "productId": 99,
+      "productName": "Sebzeli Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/vegetable-pasta.jpg"
+    },
+    {
+      "productId": 100,
+      "productName": "Karidesli Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/shrimp-pasta.jpg"
+    },
+    {
+      "productId": 101,
+      "productName": "Napoli Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/napoli.jpg"
+    },
+    {
+      "productId": 102,
+      "productName": "Tr\u00FCf Mantarl\u0131 Pasta",
+      "currentCategory": "Makarnalar",
+      "canonicalCategory": "Makarnalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/truffle-pasta.jpg"
+    },
+    {
+      "productId": 103,
+      "productName": "Pizza Margherita",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/margherita.jpg"
+    },
+    {
+      "productId": 104,
+      "productName": "Pepperoni Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/pepperoni.jpg"
+    },
+    {
+      "productId": 105,
+      "productName": "Quattro Formaggi",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/quattro-formaggi.jpg"
+    },
+    {
+      "productId": 106,
+      "productName": "Vegetarian Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/vegetarian.jpg"
+    },
+    {
+      "productId": 107,
+      "productName": "BBQ Chicken Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/bbq-chicken.jpg"
+    },
+    {
+      "productId": 108,
+      "productName": "Ton Bal\u0131kl\u0131 Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tuna-pizza.jpg"
+    },
+    {
+      "productId": 109,
+      "productName": "Karides Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/shrimp-pizza.jpg"
+    },
+    {
+      "productId": 110,
+      "productName": "Mantarl\u0131 Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mushroom-pizza.jpg"
+    },
+    {
+      "productId": 111,
+      "productName": "Sucuklu Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/sucuk-pizza.jpg"
+    },
+    {
+      "productId": 112,
+      "productName": "Kar\u0131\u015F\u0131k Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mixed-pizza.jpg"
+    },
+    {
+      "productId": 113,
+      "productName": "Napoli Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/napoli-pizza.jpg"
+    },
+    {
+      "productId": 114,
+      "productName": "Prosciutto Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/prosciutto.jpg"
+    },
+    {
+      "productId": 115,
+      "productName": "Mozzarella Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mozzarella.jpg"
+    },
+    {
+      "productId": 116,
+      "productName": "Akdeniz Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/mediterranean.jpg"
+    },
+    {
+      "productId": 117,
+      "productName": "Sebzeli Pizza",
+      "currentCategory": "Pizza",
+      "canonicalCategory": "Pizza",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/vegetable-pizza.jpg"
+    },
+    {
+      "productId": 28,
+      "productName": "Sezar Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/caesar-salad.jpg"
+    },
+    {
+      "productId": 29,
+      "productName": "Akdeniz Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/akdeniz-salata.jpg"
+    },
+    {
+      "productId": 30,
+      "productName": "Tavuklu Ye\u015Fil Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/chicken-salad.jpg"
+    },
+    {
+      "productId": 31,
+      "productName": "Ton Bal\u0131kl\u0131 Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tuna-salad.jpg"
+    },
+    {
+      "productId": 32,
+      "productName": "Avokado Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/avocado-salad.jpg"
+    },
+    {
+      "productId": 33,
+      "productName": "Kinoa Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/quinoa-salad.jpg"
+    },
+    {
+      "productId": 34,
+      "productName": "Roka Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/arugula-salad.jpg"
+    },
+    {
+      "productId": 35,
+      "productName": "Izgara Peynir Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/grilled-cheese-salad.jpg"
+    },
+    {
+      "productId": 36,
+      "productName": "Karides Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/shrimp-salad.jpg"
+    },
+    {
+      "productId": 37,
+      "productName": "Fit Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/fit-salad.jpg"
+    },
+    {
+      "productId": 38,
+      "productName": "Sebzeli Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/vegetable-salad.jpg"
+    },
+    {
+      "productId": 39,
+      "productName": "Nar Ek\u015Fili Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/pomegranate-salad.jpg"
+    },
+    {
+      "productId": 40,
+      "productName": "Avokadolu Tavuk Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/avocado-chicken-salad.jpg"
+    },
+    {
+      "productId": 41,
+      "productName": "Caprese Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/caprese.jpg"
+    },
+    {
+      "productId": 42,
+      "productName": "Sebze Bah\u00E7esi Salata",
+      "currentCategory": "Salatalar",
+      "canonicalCategory": "Salatalar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/garden-salad.jpg"
+    },
+    {
+      "productId": 118,
+      "productName": "Tiramisu",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/tiramisu.jpg"
+    },
+    {
+      "productId": 119,
+      "productName": "Cheesecake",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/cheesecake.jpg"
+    },
+    {
+      "productId": 120,
+      "productName": "\u00C7ikolatal\u0131 Sufle",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/souffle.jpg"
+    },
+    {
+      "productId": 121,
+      "productName": "Panna Cotta",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/panna-cotta.jpg"
+    },
+    {
+      "productId": 122,
+      "productName": "San Sebastian Cheesecake",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/san-sebastian.jpg"
+    },
+    {
+      "productId": 123,
+      "productName": "Profiterol",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/profiterol.jpg"
+    },
+    {
+      "productId": 124,
+      "productName": "Dondurma Taba\u011F\u0131",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/ice-cream.jpg"
+    },
+    {
+      "productId": 125,
+      "productName": "Creme Brulee",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/creme-brulee.jpg"
+    },
+    {
+      "productId": 126,
+      "productName": "Brownie",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/brownie.jpg"
+    },
+    {
+      "productId": 127,
+      "productName": "Meyve Taba\u011F\u0131",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/fruit-plate.jpg"
+    },
+    {
+      "productId": 128,
+      "productName": "Magnolia",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/magnolia.jpg"
+    },
+    {
+      "productId": 129,
+      "productName": "F\u0131r\u0131n S\u00FCtla\u00E7",
+      "currentCategory": "Tatl\u0131lar",
+      "canonicalCategory": "Tatl\u0131lar",
+      "evidence": "ProductQueryExample.txt dish block \u002B CategoryQueryExample.txt name",
+      "confidence": "AUTHORITATIVE",
+      "imageUrl": "/images/products/sutlac.jpg"
+    }
+  ]
+}

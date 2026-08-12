@@ -1,0 +1,69 @@
+@model IReadOnlyList<DatabaseMastery.HotCoffeePostgreSQL.Dtos.AdminAnalyticsDtos.RecentReviewDto>
+
+<div class="col-xl-4 col-md-6">
+    <div class="dash-card h-100">
+        <div class="dash-card-header">
+            <div>
+                <div class="section-title">Son Değerlendirmeler</div>
+                <div class="section-sub">Yayındaki müşteri yorumları</div>
+            </div>
+            <a asp-controller="Review" asp-action="ReviewList" class="view-all">Tümü <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="dash-card-body pt-0">
+            @if (Model == null || Model.Count == 0)
+            {
+                <div style="text-align:center;padding:36px 12px;color:var(--muted);font-size:13px;">
+                    <i class="bi bi-chat-square" style="font-size:28px;display:block;margin-bottom:10px;color:#ddd;"></i>
+                    Henüz yayınlanmış yorum yok.
+                </div>
+            }
+            else
+            {
+                var avatarColors = new[] { "var(--accent-dark)", "var(--purple)", "var(--teal)", "var(--blue)" };
+                var index = 0;
+                foreach (var review in Model)
+                {
+                    var initials = GetInitials(review.CustomerName);
+                    var color = avatarColors[index % avatarColors.Length];
+                    index++;
+                    <div class="review-item">
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <div class="review-avatar" style="background:@color;">@initials</div>
+                            <div>
+                                <div class="review-name">@review.CustomerName</div>
+                                <div class="review-date">@TurkishDatePresentation.FormatDateTime(review.CreatedAt)</div>
+                            </div>
+                            <div class="ms-auto review-stars">@RenderStars(review.Rating)</div>
+                        </div>
+                        <div class="review-text">"@review.Comment"</div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@functions {
+    private static string GetInitials(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return "?";
+        }
+
+        var parts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length == 1)
+        {
+            return parts[0][..Math.Min(2, parts[0].Length)].ToUpperInvariant();
+        }
+
+        return $"{char.ToUpperInvariant(parts[0][0])}{char.ToUpperInvariant(parts[^1][0])}";
+    }
+
+    private static Microsoft.AspNetCore.Html.IHtmlContent RenderStars(int rating)
+    {
+        var filled = Math.Clamp(rating, 0, 5);
+        var html = new string('★', filled) + $"<span style=\"color:#ddd;\">{new string('★', 5 - filled)}</span>";
+        return new Microsoft.AspNetCore.Html.HtmlString(html);
+    }
+}

@@ -1,82 +1,21 @@
-﻿using DatabaseMastery.HotCoffeePostgreSQL.Context;
+﻿using DatabaseMastery.HotCoffeePostgreSQL.Services.AdminAnalytics;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.StatisticsViewComponents
 {
-    public class _StatisticsHeatmapComponentPartial:ViewComponent
+    public class _StatisticsHeatmapComponentPartial : ViewComponent
     {
-        private readonly AppDbContext _context;
-        public _StatisticsHeatmapComponentPartial(AppDbContext context)
+        private readonly IAdminAnalyticsService _analytics;
+
+        public _StatisticsHeatmapComponentPartial(IAdminAnalyticsService analytics)
         {
-            _context = context;
+            _analytics = analytics;
         }
-        public IViewComponentResult Invoke()
+
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            // 6 saat dilimi x 7 gün = 42 hücre
-            var hourSlots = new[] { 12, 14, 16, 18, 20, 22 };
-
-            // Local compatibility: EF/Npgsql translates DayOfWeek/Hours via nullable
-            // date_part and throws "Nullable object must have a value" on materialize.
-            // Source intent preserved: all reservations, DayOfWeek + Hour client-side.
-            var reservations = _context.Reservations
-                .Select(r => new
-                {
-                    r.ReservationDate,
-                    r.ReservationTime
-                })
-                .ToList()
-                .Select(r => new
-                {
-                    DayOfWeek = r.ReservationDate.DayOfWeek,
-                    Hour = r.ReservationTime.Hours
-                })
-                .ToList();
-
-            // [saat index, gün index] → sayı
-            // Gün: 0=Pzt, 1=Sal, 2=Çar, 3=Per, 4=Cum, 5=Cmt, 6=Paz
-            var heatData = new int[6, 7];
-
-            foreach (var r in reservations)
-            {
-                // Saat dilimini bul (en yakın slot)
-                int hourIndex = -1;
-                for (int i = 0; i < hourSlots.Length; i++)
-                {
-                    if (r.Hour >= hourSlots[i] && (i == hourSlots.Length - 1 || r.Hour < hourSlots[i + 1]))
-                    {
-                        hourIndex = i;
-                        break;
-                    }
-                }
-                if (hourIndex == -1) continue;
-
-                // DayOfWeek → Pazartesi bazlı index
-                int dayIndex = r.DayOfWeek switch
-                {
-                    DayOfWeek.Monday => 0,
-                    DayOfWeek.Tuesday => 1,
-                    DayOfWeek.Wednesday => 2,
-                    DayOfWeek.Thursday => 3,
-                    DayOfWeek.Friday => 4,
-                    DayOfWeek.Saturday => 5,
-                    DayOfWeek.Sunday => 6,
-                    _ => -1
-                };
-                if (dayIndex == -1) continue;
-
-                heatData[hourIndex, dayIndex]++;
-            }
-
-            // Renk normalize etmek için max değeri bul
-            int maxVal = 1;
-            for (int h = 0; h < 6; h++)
-                for (int d = 0; d < 7; d++)
-                    if (heatData[h, d] > maxVal) maxVal = heatData[h, d];
-
-            ViewBag.HeatData = heatData;
-            ViewBag.MaxVal = maxVal;
-
-            return View();
+            var overview = await _analytics.GetStatisticsOverviewAsync();
+            return View(overview.Heatmap);
         }
     }
 }

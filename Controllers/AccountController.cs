@@ -2,9 +2,11 @@ using System.Security.Claims;
 using DatabaseMastery.HotCoffeePostgreSQL.Authentication;
 using DatabaseMastery.HotCoffeePostgreSQL.Models.ViewModels;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.AdminAuth;
+using DatabaseMastery.HotCoffeePostgreSQL.Infrastructure;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
 {
@@ -32,6 +34,7 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [EnableRateLimiting(RateLimitPolicies.AdminLoginPost)]
         public async Task<IActionResult> Login(AdminLoginViewModel model)
         {
             if (!ModelState.IsValid)

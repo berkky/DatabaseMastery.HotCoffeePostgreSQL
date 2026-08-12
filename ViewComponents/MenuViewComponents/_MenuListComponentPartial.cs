@@ -1,22 +1,21 @@
-using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.PublicRestaurant;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.MenuViewComponents
 {
     public class _MenuListComponentPartial : ViewComponent
     {
-        private readonly AppDbContext _context;
+        private readonly IPublicRestaurantService _publicRestaurantService;
 
-        public _MenuListComponentPartial(AppDbContext context)
+        public _MenuListComponentPartial(IPublicRestaurantService publicRestaurantService)
         {
-            _context = context;
+            _publicRestaurantService = publicRestaurantService;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var values = _context.Products.Include(x => x.Category).OrderBy(y => y.ProductId).ToList();
-            return View(values);
+            var landing = await _publicRestaurantService.GetLandingAsync();
+            return View(landing);
         }
     }
 }

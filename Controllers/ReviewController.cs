@@ -15,11 +15,16 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
     {
         private readonly IReviewService _reviewService;
         private readonly IProductService _productService;
+        private readonly TimeProvider _timeProvider;
 
-        public ReviewController(IReviewService reviewService, IProductService productService)
+        public ReviewController(
+            IReviewService reviewService,
+            IProductService productService,
+            TimeProvider timeProvider)
         {
             _reviewService = reviewService;
             _productService = productService;
+            _timeProvider = timeProvider;
         }
 
         public async Task<IActionResult> ReviewList()
@@ -39,7 +44,7 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
         public async Task<IActionResult> CreateReview(CreateReviewDto createReviewDto)
         {
             BusinessRequestNormalizer.TrimCreateReview(createReviewDto);
-            createReviewDto.CreatedAt = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
+            createReviewDto.CreatedAt = _timeProvider.GetUtcNow().UtcDateTime;
             createReviewDto.Status = true;
 
             ModelState.Clear();

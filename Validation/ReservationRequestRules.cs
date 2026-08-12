@@ -5,14 +5,15 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Validation
     public static class ReservationRequestRules
     {
         /// <summary>
-        /// Rejects reservation dates before today's local calendar date (Turkey business context).
+        /// Rejects reservation dates before today's restaurant business calendar date (Europe/Istanbul).
         /// </summary>
         public static void ValidateDateNotInPast(
             ModelStateDictionary modelState,
-            DateTime reservationDate,
+            DateOnly reservationDate,
+            DateOnly businessToday,
             string fieldName = "ReservationDate")
         {
-            if (reservationDate.Date < DateTime.Today)
+            if (reservationDate < businessToday)
             {
                 modelState.AddModelError(
                     fieldName,

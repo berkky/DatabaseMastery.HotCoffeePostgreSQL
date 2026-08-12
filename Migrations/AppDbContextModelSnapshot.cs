@@ -17,7 +17,7 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.36")
+                .HasAnnotation("ProductVersion", "10.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -108,19 +108,23 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("ReservationDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("ReservationDate")
+                        .HasColumnType("date");
 
-                    b.Property<TimeSpan>("ReservationTime")
-                        .HasColumnType("interval");
+                    b.Property<TimeOnly>("ReservationTime")
+                        .HasColumnType("time without time zone");
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.HasKey("ReservationId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", t =>
+                        {
+                            t.HasCheckConstraint("CK_Reservations_Status", "\"Status\" IN ('Pending', 'Confirmed', 'Cancelled')");
+                        });
                 });
 
             modelBuilder.Entity("DatabaseMastery.HotCoffeePostgreSQL.Entities.Review", b =>

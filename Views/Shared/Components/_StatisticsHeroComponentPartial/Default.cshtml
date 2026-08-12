@@ -1,3 +1,5 @@
+@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.AdminAnalyticsDtos.StatisticsOverviewDto
+
 <!-- HEADER -->
 <div class="pg-header">
     <div>
@@ -9,11 +11,11 @@
 
 <!-- HERO -->
 <div class="hero-banner">
-    <div class="hero-stat"><div class="hero-stat-num ac">@ViewBag.totalReservationCount</div><div class="hero-stat-lbl">Toplam Rezervasyon</div><div class="hero-stat-sub">Tüm zamanlar</div></div>
+    <div class="hero-stat"><div class="hero-stat-num ac">@Model.TotalReservations</div><div class="hero-stat-lbl">Toplam Rezervasyon</div><div class="hero-stat-sub">Tüm zamanlar</div></div>
 
-    <div class="hero-stat"><div class="hero-stat-num">@ViewBag.totalCustomerCount</div><div class="hero-stat-lbl">Kayıtlı Müşteri</div><div class="hero-stat-sub">Bu hafta + @ViewBag.thisWeekTotalGuestCount yeni</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">@Model.TotalGuestCount</div><div class="hero-stat-lbl">Toplam Misafir</div><div class="hero-stat-sub">Bu hafta onaylı: @Model.ThisWeekConfirmedGuestCount</div></div>
 
-    <div class="hero-stat"><div class="hero-stat-num ac">@ViewBag.avgScore</div><div class="hero-stat-lbl">Ortalama Puan</div><div class="hero-stat-sub">@ViewBag.totalReviewCount değerlendirme</div></div>
+    <div class="hero-stat"><div class="hero-stat-num ac">@Model.AverageRating.ToString("0.0")</div><div class="hero-stat-lbl">Ortalama Puan</div><div class="hero-stat-sub">@Model.TotalReviews değerlendirme</div></div>
 
-    <div class="hero-stat"><div class="hero-stat-num">@ViewBag.activeProduct</div><div class="hero-stat-lbl">Aktif Ürün</div><div class="hero-stat-sub">@ViewBag.categoryCount kategoride</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">@Model.ActiveProducts</div><div class="hero-stat-lbl">Aktif Ürün</div><div class="hero-stat-sub">@Model.ActiveCategories aktif kategoride</div></div>
 </div>

@@ -1,3 +1,4 @@
+using DatabaseMastery.HotCoffeePostgreSQL.Domain;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
@@ -13,5 +14,6 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices
         Task<bool> ChangeReservationStatusToPending(int id);
         Task<bool> ChangeReservationStatusToApproval(int id);
         Task<bool> ChangeReservationStatusToCancel(int id);
+        Task<bool> SetReservationStatusAsync(int id, ReservationStatus status);
     }
 }

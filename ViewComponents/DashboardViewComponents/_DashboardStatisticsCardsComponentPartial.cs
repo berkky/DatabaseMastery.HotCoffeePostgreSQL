@@ -1,41 +1,21 @@
-using DatabaseMastery.HotCoffeePostgreSQL.Services.DashboardServices;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.AdminAnalytics;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.DashboardViewComponents
 {
     public class _DashboardStatisticsCardsComponentPartial : ViewComponent
     {
-        private readonly IDashboardService _dashboardService;
+        private readonly IAdminAnalyticsService _analytics;
 
-        public _DashboardStatisticsCardsComponentPartial(IDashboardService dashboardService)
+        public _DashboardStatisticsCardsComponentPartial(IAdminAnalyticsService analytics)
         {
-            _dashboardService = dashboardService;
+            _analytics = analytics;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            ViewBag.totalReservationCount =
-                await _dashboardService.GetTotalReservationCountAsync();
-
-            ViewBag.pendingReservationCount =
-                await _dashboardService.GetPendingReservationCountAsync();
-
-            ViewBag.approvedReservationCount =
-                await _dashboardService.GetApprovedReservationCountAsync();
-
-            ViewBag.cancelledReservationCount =
-                await _dashboardService.GetCancelledReservationCountAsync();
-
-            ViewBag.todayReservationCount =
-                await _dashboardService.GetTodayReservationCountAsync();
-
-            ViewBag.totalCustomerCount =
-                await _dashboardService.GetTotalCustomerCountAsync();
-
-            ViewBag.totalMenuProductCount =
-                await _dashboardService.GetTotalMenuProductCountAsync();
-
-            return View();
+            var overview = await _analytics.GetDashboardOverviewAsync();
+            return View(overview);
         }
     }
 }

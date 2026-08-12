@@ -1,0 +1,38 @@
+## Build outputs
+**/bin/
+**/obj/
+
+## IDE / editor
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.idea/
+
+## Test / coverage / publish artifacts
+TestResults/
+coverage/
+artifacts/
+publish/
+*.Coverage
+*.coveragexml
+
+## OS / temp
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+*.log
+
+## Local secrets (never commit real values)
+secrets.json
+*.secrets.json
+appsettings.Local.json
+appsettings.*.local.json
+
+## NuGet vulnerability audit scratch output
+vulnerable-packages*.json

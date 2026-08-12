@@ -1,58 +1,437 @@
+@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.PublicRestaurantDtos.PublicLandingDto
+
+@using DatabaseMastery.HotCoffeePostgreSQL.Configuration
+
+@using System.Globalization
+
+@inject Microsoft.Extensions.Options.IOptions<RestaurantBrandOptions> BrandOptions
+
 @{
-    Layout = null;
+
+    Layout = "_PublicLayout";
+
+    var brand = BrandOptions.Value;
+
+    ViewData["Title"] = "Menü ve Rezervasyon";
+
+    ViewData["MetaDescription"] = brand.ShortDescription;
+
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
+
+    var topCategories = Model.Categories.Take(4).ToList();
+
 }
 
-<!DOCTYPE html>
-<html lang="en-US">
 
-@await Component.InvokeAsync("_MenuHeadComponentPartial")
 
-<body id="top" class="body-header1">
+<section class="hc-hero hc-hero-cinematic" data-hc-hero>
 
-    <div class="mask-nav-2">
+    <div class="hc-container hc-hero-grid">
 
-        @await Component.InvokeAsync("_MenuMobileComponentPartial")
+        <div class="hc-hero-copy hc-reveal">
+
+            <span class="hc-kicker hc-hero-intro">Restoran &amp; Kahve</span>
+
+            <h1 class="hc-hero-intro">@brand.BrandName</h1>
+
+            <p class="hc-hero-lead hc-hero-intro">@brand.ShortDescription</p>
+
+            <div class="hc-hero-actions hc-hero-intro">
+
+                <a class="hc-btn hc-btn-primary" href="#menu">Menüyü İncele</a>
+
+                <a class="hc-btn hc-btn-secondary" asp-controller="Reservation" asp-action="CreateReservation">Rezervasyon Yap</a>
+
+            </div>
+
+        </div>
+
+        <aside class="hc-hero-stage hc-reveal" aria-label="Öne çıkan deneyim">
+
+            <div class="hc-hero-stage-layers" data-hc-hero-layers aria-hidden="true">
+
+                @if (!string.IsNullOrWhiteSpace(Model.HeroStageImageUrl))
+
+                {
+
+                    <img class="hc-hero-stage-media"
+
+                         src="@Model.HeroStageImageUrl"
+
+                         alt=""
+
+                         width="640"
+
+                         height="480"
+
+                         decoding="async"
+
+                         onerror="this.style.display='none';" />
+
+                }
+
+                <div class="hc-hero-stage-overlay"></div>
+
+                <div class="hc-hero-stage-glow"></div>
+
+                <div class="hc-hero-stage-grid"></div>
+
+            </div>
+
+            <div class="hc-hero-stage-content">
+
+                <div class="hc-hero-panel-stats">
+
+                    <div class="hc-hero-stat hc-hero-intro">
+
+                        <span class="hc-hero-stat-value" data-hc-count-to="@Model.ActiveProductCount" aria-hidden="true">@Model.ActiveProductCount</span>
+
+                        <span class="hc-sr-only">@Model.ActiveProductCount</span>
+
+                        <span class="hc-hero-stat-label">Aktif ürün</span>
+
+                    </div>
+
+                    <div class="hc-hero-stat hc-hero-intro">
+
+                        <span class="hc-hero-stat-value" data-hc-count-to="@Model.ActiveCategoryCount" aria-hidden="true">@Model.ActiveCategoryCount</span>
+
+                        <span class="hc-sr-only">@Model.ActiveCategoryCount</span>
+
+                        <span class="hc-hero-stat-label">Kategori</span>
+
+                    </div>
+
+                </div>
+
+                @if (topCategories.Count > 0)
+
+                {
+
+                    <div class="hc-hero-panel-tags">
+
+                        @foreach (var category in topCategories)
+
+                        {
+
+                            <span class="hc-hero-tag hc-hero-chip">@category.CategoryName</span>
+
+                        }
+
+                    </div>
+
+                }
+
+                <strong class="hc-hero-stage-title hc-hero-intro">Günün lezzeti masanızda</strong>
+
+                <span class="hc-hero-stage-copy hc-hero-intro">Menü ve rezervasyon deneyimi tek çatı altında.</span>
+
+            </div>
+
+        </aside>
 
     </div>
 
-    @await Component.InvokeAsync("_MenuNavbarComponentPartial")
+</section>
 
-    @await Component.InvokeAsync("_MenuTopImageSectionComponentPartial")
 
-    @await Component.InvokeAsync("_MenuListComponentPartial")
 
-    <section id="gallery-section" class="menu-public-gallery">
-        <div class="container">
-            <div class="gallery-heading">
-                <h2>Galeri</h2>
-                <p>Restoranımızdan seçilmiş kareler</p>
-            </div>
-            <div class="menu-public-gallery-grid">
-                <div class="menu-public-gallery-item">
-                    <img src="/dina-html/images/gallery/gallery-1.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
-                </div>
-                <div class="menu-public-gallery-item">
-                    <img src="/dina-html/images/gallery/gallery-3.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
-                </div>
-                <div class="menu-public-gallery-item">
-                    <img src="/dina-html/images/gallery/gallery-5.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
-                </div>
-                <div class="menu-public-gallery-item">
-                    <img src="/dina-html/images/gallery/gallery-7.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
-                </div>
-                <div class="menu-public-gallery-item">
-                    <img src="/dina-html/images/gallery/gallery-9.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
-                </div>
-                <div class="menu-public-gallery-item">
-                    <img src="/dina-html/images/gallery/gallery-11.jpg" alt="" loading="lazy" decoding="async" width="640" height="480" />
-                </div>
-            </div>
+<section class="hc-section hc-section-compact hc-reveal" id="about" aria-labelledby="about-heading">
+
+    <div class="hc-container">
+
+        <div class="hc-section-head hc-section-head-compact">
+
+            <h2 id="about-heading">Sakin bir masa, özenli bir menü</h2>
+
+            <p>Menümüzdeki ürünler güncel aktif kataloğumuzdan gelir. Rezervasyon talepleriniz restoran ekibimiz tarafından incelenir.</p>
+
         </div>
-    </section>
 
-    @await Component.InvokeAsync("_MenuFooterComponentPartial")
+    </div>
 
-    @await Component.InvokeAsync("_MenuScriptsComponentPartial")
+</section>
 
-</body>
-</html>
+
+
+<section class="hc-section" id="menu" aria-labelledby="menu-heading">
+
+    <div class="hc-container">
+
+        <div class="hc-section-head">
+
+            <h2 id="menu-heading">Menü</h2>
+
+            <p>Aktif kategorilerden seçilmiş lezzetler</p>
+
+        </div>
+
+
+
+        @if (Model.Categories.Count == 0)
+
+        {
+
+            <div class="hc-empty" role="status">
+
+                Menü şu anda güncelleniyor. Lütfen daha sonra tekrar ziyaret edin.
+
+            </div>
+
+        }
+
+        else
+
+        {
+
+            <div class="hc-category-nav-wrap">
+
+                <nav class="hc-category-nav" aria-label="Menü kategorileri">
+
+                    @foreach (var category in Model.Categories)
+
+                    {
+
+                        <a class="hc-category-pill" href="#category-@category.CategoryId">@category.CategoryName</a>
+
+                    }
+
+                </nav>
+
+            </div>
+
+
+
+            @foreach (var category in Model.Categories)
+
+            {
+
+                <div class="hc-category-block" id="category-@category.CategoryId">
+
+                    <h3>@category.CategoryName</h3>
+
+                    <div class="hc-product-grid">
+
+                        @foreach (var product in category.Products)
+
+                        {
+
+                            var resolvedImage = product.ImageUrl;
+
+                            var hasImage = !string.IsNullOrWhiteSpace(resolvedImage);
+
+                            var fallbackInitial = GetProductInitial(product.ProductName, category.CategoryName);
+
+                            <article class="hc-product-card">
+
+                                <div class="hc-product-media">
+
+                                    @if (hasImage)
+
+                                    {
+
+                                        <img src="@resolvedImage"
+
+                                             alt="@product.ProductName"
+
+                                             width="88"
+
+                                             height="88"
+
+                                             loading="lazy"
+
+                                             decoding="async"
+
+                                             onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+
+                                        <span class="hc-product-fallback" hidden>
+
+                                            <span class="hc-product-fallback-texture" aria-hidden="true"></span>
+
+                                            <span class="hc-product-fallback-mark" aria-hidden="true">@fallbackInitial</span>
+
+                                        </span>
+
+                                    }
+
+                                    else
+
+                                    {
+
+                                        <span class="hc-product-fallback">
+
+                                            <span class="hc-product-fallback-texture" aria-hidden="true"></span>
+
+                                            <span class="hc-product-fallback-mark" aria-hidden="true">@fallbackInitial</span>
+
+                                        </span>
+
+                                    }
+
+                                </div>
+
+                                <div>
+
+                                    <div class="hc-product-top">
+
+                                        <h4>@product.ProductName</h4>
+
+                                        <div class="hc-product-price">@product.Price.ToString("C", tr)</div>
+
+                                    </div>
+
+                                    <p class="hc-product-desc">@product.Description</p>
+
+                                </div>
+
+                            </article>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            }
+
+        }
+
+    </div>
+
+</section>
+
+
+
+<section class="hc-section hc-section-compact hc-reveal">
+
+    <div class="hc-container">
+
+        <div class="hc-cta-band">
+
+            <div>
+
+                <h2>Masamıza bekleriz</h2>
+
+                <p>Rezervasyon talebinizi iletin; ekibimiz uygunluğu kontrol edip sizinle iletişime geçecektir.</p>
+
+            </div>
+
+            <a class="hc-btn hc-btn-primary" asp-controller="Reservation" asp-action="CreateReservation">Rezervasyon Yap</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="hc-section hc-reveal" id="reviews" aria-labelledby="reviews-heading">
+
+    <div class="hc-container">
+
+        <div class="hc-section-head">
+
+            <h2 id="reviews-heading">Misafir yorumları</h2>
+
+            <p>Yayınlanmış gerçek değerlendirmeler</p>
+
+        </div>
+
+
+
+        @if (Model.RecentPublishedReviews.Count == 0)
+
+        {
+
+            <div class="hc-empty" role="status">Henüz yayınlanmış yorum bulunmuyor.</div>
+
+        }
+
+        else
+
+        {
+
+            <div class="hc-review-grid">
+
+                @foreach (var review in Model.RecentPublishedReviews)
+
+                {
+
+                    var rating = Math.Clamp(review.Rating, 1, 5);
+
+                    var stars = string.Concat(Enumerable.Repeat("★", rating));
+
+                    <article class="hc-review-card">
+
+                        <div class="hc-review-meta">
+
+                            <div>
+
+                                <div class="hc-review-name">@review.CustomerName</div>
+
+                                @if (!string.IsNullOrWhiteSpace(review.ProductName))
+
+                                {
+
+                                    <div class="hc-review-product">@review.ProductName</div>
+
+                                }
+
+                            </div>
+
+                            <div class="hc-stars" aria-hidden="true">@stars</div>
+
+                        </div>
+
+                        <p class="hc-sr-only">Puan: @rating üzerinden 5</p>
+
+                        <p>@review.Comment</p>
+
+                    </article>
+
+                }
+
+            </div>
+
+        }
+
+    </div>
+
+</section>
+
+
+
+@functions {
+
+    private static string GetProductInitial(string productName, string categoryName)
+
+    {
+
+        if (!string.IsNullOrWhiteSpace(productName))
+
+        {
+
+            return char.ToUpperInvariant(productName.Trim()[0]).ToString();
+
+        }
+
+
+
+        if (!string.IsNullOrWhiteSpace(categoryName))
+
+        {
+
+            return char.ToUpperInvariant(categoryName.Trim()[0]).ToString();
+
+        }
+
+
+
+        return "H";
+
+    }
+
+}
+
+

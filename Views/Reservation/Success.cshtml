@@ -1,0 +1,17 @@
+@{
+    Layout = "_PublicLayout";
+    ViewData["Title"] = "Rezervasyon Talebi Alındı";
+    ViewData["MetaDescription"] = "Rezervasyon talebiniz HotCoffee tarafından alındı.";
+}
+
+<section class="hc-success hc-container">
+    <h1>Rezervasyon talebiniz alındı</h1>
+    <p>
+        Talebiniz başarıyla iletildi. Restoran ekibimiz uygunluğu kontrol edecek;
+        onay henüz tamamlanmış değildir.
+    </p>
+    <div class="hc-hero-actions" style="justify-content:center;">
+        <a class="hc-btn hc-btn-primary" asp-controller="Menu" asp-action="Index">Ana Sayfaya Dön</a>
+        <a class="hc-btn hc-btn-secondary" asp-controller="Reservation" asp-action="CreateReservation">Yeni Talep</a>
+    </div>
+</section>

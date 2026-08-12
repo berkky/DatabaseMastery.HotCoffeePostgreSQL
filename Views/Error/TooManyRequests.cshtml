@@ -1,0 +1,26 @@
+@{
+    Layout = "_PublicLayout";
+    ViewData["Title"] = "Çok fazla istek";
+    var context = ViewData["Context"] as string;
+}
+
+<div class="hc-page hc-page-form">
+    <div class="hc-form-shell">
+        <h1>Çok fazla istek</h1>
+        @if (string.Equals(context, "login", StringComparison.OrdinalIgnoreCase))
+        {
+            <p class="hc-form-lead">Kısa sürede çok fazla giriş denemesi yapıldı. Lütfen bir süre sonra tekrar deneyin.</p>
+        }
+        else if (string.Equals(context, "reservation", StringComparison.OrdinalIgnoreCase))
+        {
+            <p class="hc-form-lead">Kısa sürede çok fazla rezervasyon talebi gönderildi. Lütfen bir süre sonra tekrar deneyin.</p>
+        }
+        else
+        {
+            <p class="hc-form-lead">Kısa sürede çok fazla istek gönderildi. Lütfen bir süre sonra tekrar deneyin.</p>
+        }
+        <div class="hc-form-actions">
+            <a class="hc-btn hc-btn-primary" asp-controller="Menu" asp-action="Index">Ana Sayfaya Dön</a>
+        </div>
+    </div>
+</div>

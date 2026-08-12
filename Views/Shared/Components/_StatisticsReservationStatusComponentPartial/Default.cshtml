@@ -1,4 +1,12 @@
-﻿<div class="col-xl-4">
+﻿@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.AdminAnalyticsDtos.ReservationStatusSummaryDto
+@{
+    var inv = System.Globalization.CultureInfo.InvariantCulture;
+    var confirmedRate = Model.ConfirmedRatePercent.ToString("0.0", inv);
+    var pendingRate = Model.PendingRatePercent.ToString("0.0", inv);
+    var cancelledRate = Model.CancelledRatePercent.ToString("0.0", inv);
+}
+
+<div class="col-xl-4">
     <div class="sec-card" style="animation-delay:.1s;">
         <div class="card-head">
             <div class="ch-icon" style="background:var(--accent-soft);">
@@ -9,15 +17,15 @@
         <div class="card-body">
             <div class="status-row">
                 <div class="status-chip sc-approved">
-                    <div class="sc-num" style="color:#16a34a;">@ViewBag.approved</div>
+                    <div class="sc-num" style="color:#16a34a;">@Model.Confirmed</div>
                     <div class="sc-lbl">Onaylandı</div>
                 </div>
                 <div class="status-chip sc-pending">
-                    <div class="sc-num" style="color:#b45309;">@ViewBag.pending</div>
+                    <div class="sc-num" style="color:#b45309;">@Model.Pending</div>
                     <div class="sc-lbl">Beklemede</div>
                 </div>
                 <div class="status-chip sc-cancel">
-                    <div class="sc-num" style="color:#dc2626;">@ViewBag.cancelled</div>
+                    <div class="sc-num" style="color:#dc2626;">@Model.Cancelled</div>
                     <div class="sc-lbl">İptal</div>
                 </div>
             </div>
@@ -25,23 +33,23 @@
                 <div>
                     <div class="prog-top">
                         <div class="prog-name"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;"></span>Onaylanan</div>
-                        <div class="prog-val">@ViewBag.approved — %@ViewBag.approvedRate</div>
+                        <div class="prog-val">@Model.Confirmed — %@confirmedRate</div>
                     </div>
-                    <div class="prog-track"><div class="prog-fill" style="width:@(ViewBag.approvedRate)%;background:var(--green);"></div></div>
+                    <div class="prog-track"><div class="prog-fill" style="width:@(confirmedRate)%;background:var(--green);"></div></div>
                 </div>
                 <div>
                     <div class="prog-top">
                         <div class="prog-name"><span style="width:8px;height:8px;border-radius:50%;background:var(--yellow);display:inline-block;"></span>Beklemede</div>
-                        <div class="prog-val">@ViewBag.pending — %@ViewBag.pendingRate</div>
+                        <div class="prog-val">@Model.Pending — %@pendingRate</div>
                     </div>
-                    <div class="prog-track"><div class="prog-fill" style="width:@(ViewBag.pendingRate)%;background:var(--yellow);"></div></div>
+                    <div class="prog-track"><div class="prog-fill" style="width:@(pendingRate)%;background:var(--yellow);"></div></div>
                 </div>
                 <div>
                     <div class="prog-top">
                         <div class="prog-name"><span style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block;"></span>İptal Edilen</div>
-                        <div class="prog-val">@ViewBag.cancelled — %@ViewBag.cancelledRate</div>
+                        <div class="prog-val">@Model.Cancelled — %@cancelledRate</div>
                     </div>
-                    <div class="prog-track"><div class="prog-fill" style="width:@(ViewBag.cancelledRate)%;background:var(--red);"></div></div>
+                    <div class="prog-track"><div class="prog-fill" style="width:@(cancelledRate)%;background:var(--red);"></div></div>
                 </div>
             </div>
         </div>

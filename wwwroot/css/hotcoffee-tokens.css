@@ -1,0 +1,102 @@
+:root {
+  /* Brand foundation */
+  --hc-espresso: #2a1f1a;
+  --hc-espresso-deep: #1a1411;
+  --hc-charcoal: #1a1a1a;
+  --hc-ivory: #f7f2ea;
+  --hc-ivory-soft: #fffdf9;
+  --hc-surface: #ffffff;
+  --hc-surface-soft: #f5f4f1;
+  --hc-copper: #b87333;
+  --hc-copper-dark: #8f5a28;
+  --hc-amber: #c9923a;
+  --hc-accent: #e6a03c;
+  --hc-accent-dark: #c8861e;
+  --hc-accent-soft: rgba(230, 160, 60, 0.12);
+  --hc-text: #1a1a1a;
+  --hc-text-muted: #6b6460;
+  --hc-muted: #9a9590;
+  --hc-border: #eeebe5;
+  --hc-success: #22c55e;
+  --hc-success-soft: rgba(34, 197, 94, 0.1);
+  --hc-warning: #f59e0b;
+  --hc-warning-soft: rgba(245, 158, 11, 0.1);
+  --hc-danger: #ef4444;
+  --hc-danger-soft: rgba(239, 68, 68, 0.1);
+  --hc-info: #3b82f6;
+  --hc-info-soft: rgba(59, 130, 246, 0.1);
+
+  /* Layout */
+  --hc-radius: 14px;
+  --hc-radius-sm: 10px;
+  --hc-shadow: 0 2px 16px rgba(0, 0, 0, 0.055);
+  --hc-shadow-md: 0 6px 28px rgba(0, 0, 0, 0.08);
+  --hc-max: 1120px;
+  --hc-focus: 0 0 0 3px rgba(184, 115, 51, 0.28);
+  --hc-transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --hc-font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --hc-font-body: "Source Sans 3", "DM Sans", "Segoe UI", sans-serif;
+  --hc-font-admin: "DM Sans", "Segoe UI", sans-serif;
+
+  /* Admin shell aliases */
+  --sidebar-width: 265px;
+  --sidebar-collapsed-width: 72px;
+  --navbar-height: 64px;
+  --sidebar-bg: var(--hc-charcoal);
+  --sidebar-surface: #242424;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-text: #b0b0b0;
+  --sidebar-text-hover: #ffffff;
+  --sidebar-active-bg: rgba(230, 160, 60, 0.15);
+  --sidebar-active-text: var(--hc-accent);
+  --sidebar-active-border: var(--hc-accent);
+  --sidebar-icon: #707070;
+  --accent: var(--hc-accent);
+  --accent-soft: var(--hc-accent-soft);
+  --accent-dark: var(--hc-accent-dark);
+  --content-bg: var(--hc-surface-soft);
+  --card-bg: var(--hc-surface);
+  --navbar-bg: var(--hc-surface);
+  --navbar-border: #ebebeb;
+  --text-primary: var(--hc-text);
+  --text-secondary: var(--hc-text-muted);
+  --radius: var(--hc-radius);
+  --radius-sm: var(--hc-radius-sm);
+  --shadow: var(--hc-shadow);
+  --shadow-md: var(--hc-shadow-md);
+  --transition: var(--hc-transition);
+
+  /* Dashboard / statistics semantic palette */
+  --green: var(--hc-success);
+  --green-soft: var(--hc-success-soft);
+  --red: var(--hc-danger);
+  --red-soft: var(--hc-danger-soft);
+  --blue: var(--hc-info);
+  --blue-soft: var(--hc-info-soft);
+  --yellow: var(--hc-warning);
+  --yellow-soft: var(--hc-warning-soft);
+  --purple: #8b5cf6;
+  --purple-soft: rgba(139, 92, 246, 0.1);
+  --teal: #14b8a6;
+  --teal-soft: rgba(20, 184, 166, 0.1);
+  --bg: var(--hc-surface-soft);
+  --surface: var(--hc-surface);
+  --border: var(--hc-border);
+  --text: var(--hc-text);
+  --text2: var(--hc-text-muted);
+  --muted: var(--hc-muted);
+  --tr: var(--hc-transition);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

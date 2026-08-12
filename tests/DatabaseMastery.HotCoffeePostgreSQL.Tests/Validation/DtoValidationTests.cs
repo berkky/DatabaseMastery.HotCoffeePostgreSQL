@@ -94,13 +94,24 @@ public class DtoValidationTests
         CategoryId = 1
     };
 
+    [Fact]
+    public void Reservation_MissingDateOrTime_Fails()
+    {
+        var dto = ValidReservation();
+        dto.ReservationDate = null;
+        dto.ReservationTime = null;
+        var results = Validate(dto);
+        Assert.Contains(results, r => r.MemberNames.Contains(nameof(CreateReservationDto.ReservationDate)));
+        Assert.Contains(results, r => r.MemberNames.Contains(nameof(CreateReservationDto.ReservationTime)));
+    }
+
     private static CreateReservationDto ValidReservation() => new()
     {
         Name = "Guest",
         Phone = "+905551112233",
         Email = "guest@example.com",
-        ReservationDate = DateTime.Today.AddDays(1),
-        ReservationTime = TimeSpan.FromHours(19),
+        ReservationDate = DateOnly.FromDateTime(DateTime.UtcNow.Date).AddDays(1),
+        ReservationTime = new TimeOnly(19, 0),
         GuestCount = 2,
         Description = "note"
     };

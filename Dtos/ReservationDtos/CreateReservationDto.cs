@@ -21,15 +21,14 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos
 
         [Required(ErrorMessage = "Rezervasyon tarihi zorunludur.")]
         [DataType(DataType.Date)]
-        public DateTime ReservationDate { get; set; }
+        public DateOnly? ReservationDate { get; set; }
 
         [Required(ErrorMessage = "Rezervasyon saati zorunludur.")]
-        public TimeSpan ReservationTime { get; set; }
+        [DataType(DataType.Time)]
+        public TimeOnly? ReservationTime { get; set; }
 
         [Range(1, ValidationLimits.GuestCountMax, ErrorMessage = "Kişi sayısı 1 ile 50 arasında olmalıdır.")]
         public int GuestCount { get; set; }
-
-        public string Status { get; set; }
 
         [StringLength(ValidationLimits.ReservationDescriptionMax, ErrorMessage = "Not çok uzun.")]
         public string? Description { get; set; }

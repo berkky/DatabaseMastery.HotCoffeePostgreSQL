@@ -1,4 +1,5 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Domain;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.CategoryDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ProductDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
@@ -188,10 +189,10 @@ public class DomainServiceTests : IClassFixture<HotCoffeeWebApplicationFactory>
             Name = "Editable Guest",
             Phone = "+905551110000",
             Email = "edit@example.com",
-            ReservationDate = DateTime.SpecifyKind(DateTime.Today.AddDays(3), DateTimeKind.Utc),
-            ReservationTime = new TimeSpan(18, 0, 0),
+            ReservationDate = DateOnly.FromDateTime(DateTime.UtcNow.Date).AddDays(3),
+            ReservationTime = new TimeOnly(18, 0),
             GuestCount = 2,
-            Status = "Beklemede",
+            Status = ReservationStatus.Pending,
             Description = "note"
         };
         db.Reservations.Add(reservation);
@@ -203,17 +204,17 @@ public class DomainServiceTests : IClassFixture<HotCoffeeWebApplicationFactory>
             Name = "Updated Guest",
             Phone = "+905559998877",
             Email = "updated@example.com",
-            ReservationDate = DateTime.SpecifyKind(DateTime.Today.AddDays(5), DateTimeKind.Utc),
-            ReservationTime = new TimeSpan(20, 30, 0),
+            ReservationDate = DateOnly.FromDateTime(DateTime.UtcNow.Date).AddDays(5),
+            ReservationTime = new TimeOnly(20, 30),
             GuestCount = 4,
-            Status = "Onaylandı",
+            Status = ReservationStatus.Confirmed,
             Description = "updated note"
         });
         Assert.True(ok);
 
         var entity = await db.Reservations.AsNoTracking().SingleAsync(r => r.ReservationId == reservation.ReservationId);
         Assert.Equal("Updated Guest", entity.Name);
-        Assert.Equal("Onaylandı", entity.Status);
+        Assert.Equal(ReservationStatus.Confirmed, entity.Status);
         Assert.Equal(4, entity.GuestCount);
     }
 

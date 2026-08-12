@@ -1,22 +1,28 @@
 using DatabaseMastery.HotCoffeePostgreSQL.Authentication;
+using DatabaseMastery.HotCoffeePostgreSQL.Domain;
 using DatabaseMastery.HotCoffeePostgreSQL.Dtos.ReservationDtos;
 using DatabaseMastery.HotCoffeePostgreSQL.Services.ReservationServices;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.Time;
 using DatabaseMastery.HotCoffeePostgreSQL.Validation;
+using DatabaseMastery.HotCoffeePostgreSQL.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
 {
     [Authorize(Policy = AuthorizationPolicies.AdminOnly)]
     public class ReservationController : Controller
     {
-        private const string DefaultPendingStatus = "Beklemede";
-
         private readonly IReservationService _reservationService;
+        private readonly IBusinessClock _businessClock;
 
-        public ReservationController(IReservationService reservationService)
+        public ReservationController(
+            IReservationService reservationService,
+            IBusinessClock businessClock)
         {
             _reservationService = reservationService;
+            _businessClock = businessClock;
         }
 
         public async Task<IActionResult> ReservationList()
@@ -31,7 +37,8 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
         {
             var model = new CreateReservationDto
             {
-                GuestCount = 2
+                GuestCount = 2,
+                ReservationDate = _businessClock.Today
             };
 
             return View(model);
@@ -39,10 +46,10 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [EnableRateLimiting(RateLimitPolicies.PublicReservationPost)]
         public async Task<IActionResult> CreateReservation(CreateReservationDto dto)
         {
             BusinessRequestNormalizer.TrimCreateReservation(dto);
-            dto.Status = DefaultPendingStatus;
 
             ModelState.Clear();
             if (!TryValidateModel(dto))
@@ -50,23 +57,30 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
                 return View(dto);
             }
 
-            ReservationRequestRules.ValidateDateNotInPast(
-                ModelState,
-                dto.ReservationDate,
-                nameof(dto.ReservationDate));
+            if (dto.ReservationDate.HasValue)
+            {
+                ReservationRequestRules.ValidateDateNotInPast(
+                    ModelState,
+                    dto.ReservationDate.Value,
+                    _businessClock.Today,
+                    nameof(dto.ReservationDate));
+            }
 
             if (!ModelState.IsValid)
             {
                 return View(dto);
             }
 
-            dto.ReservationDate = DateTime.SpecifyKind(
-                dto.ReservationDate.Date,
-                DateTimeKind.Utc);
-
             await _reservationService.CreateReservationAsync(dto);
 
-            return RedirectToAction(nameof(ReservationList));
+            return RedirectToAction(nameof(Success));
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Success()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -124,10 +138,6 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Controllers
             {
                 return NotFound();
             }
-
-            updateReservationDto.ReservationDate = DateTime.SpecifyKind(
-                updateReservationDto.ReservationDate.Date,
-                DateTimeKind.Utc);
 
             var updated = await _reservationService.UpdateReservationAsync(updateReservationDto);
             if (!updated)

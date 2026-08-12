@@ -1,8 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "HotCoffee";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center" style="padding:3rem 1rem;">
+    <h1 class="display-5">HotCoffee</h1>
+    <p>Restoran deneyimine yönlendiriliyorsunuz.</p>
+    <p><a asp-controller="Menu" asp-action="Index">Ana sayfaya git</a></p>
 </div>
+
+<script>
+    window.location.replace("@Url.Action("Index", "Menu")");
+</script>
+<meta http-equiv="refresh" content="0;url=@Url.Action("Index", "Menu")" />

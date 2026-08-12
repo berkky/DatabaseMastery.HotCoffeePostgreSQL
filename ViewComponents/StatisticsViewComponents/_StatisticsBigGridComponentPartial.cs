@@ -1,38 +1,21 @@
-using DatabaseMastery.HotCoffeePostgreSQL.Context;
-using DatabaseMastery.HotCoffeePostgreSQL.Services;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.AdminAnalytics;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatabaseMastery.HotCoffeePostgreSQL.ViewComponents.StatisticsViewComponents
 {
     public class _StatisticsBigGridComponentPartial : ViewComponent
     {
-        private readonly AppDbContext _context;
-        public _StatisticsBigGridComponentPartial(AppDbContext context)
+        private readonly IAdminAnalyticsService _analytics;
+
+        public _StatisticsBigGridComponentPartial(IAdminAnalyticsService analytics)
         {
-            _context = context;
+            _analytics = analytics;
         }
-        public IViewComponentResult Invoke()
+
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            // Ortalama grup büyüklügü (rezervasyon basina kisi)
-            var totalReservation = _context.Reservations.Count();
-            var totalGuest = _context.Reservations.Sum(r => r.GuestCount);
-            ViewBag.avgGroupSize = totalReservation > 0
-                ? Math.Round((double)totalGuest / totalReservation, 1)
-                : 0;
-
-            // Ortalama müsteri puani
-            ViewBag.avgRating = _context.Reviews.Any()
-                ? Math.Round(_context.Reviews.Average(r => r.Rating), 1)
-                : 0;
-            ViewBag.totalReview = _context.Reviews.Count();
-
-            // Günlük ortalama rezervasyon (son 30 gün)
-            var thirtyDaysAgo = NpgsqlDateTimeCompatibility.AsUtcCalendarDate(DateTime.UtcNow).AddDays(-30);
-            var last30Count = _context.Reservations
-                .Count(r => r.ReservationDate >= thirtyDaysAgo);
-            ViewBag.dailyAvgReservation = Math.Round((double)last30Count / 30, 1);
-
-            return View();
+            var overview = await _analytics.GetStatisticsOverviewAsync();
+            return View(overview);
         }
     }
 }

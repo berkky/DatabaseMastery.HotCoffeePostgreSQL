@@ -3,7 +3,9 @@ using System.Text.RegularExpressions;
 using DatabaseMastery.HotCoffeePostgreSQL.Authentication;
 using DatabaseMastery.HotCoffeePostgreSQL.Configuration;
 using DatabaseMastery.HotCoffeePostgreSQL.Context;
+using DatabaseMastery.HotCoffeePostgreSQL.Domain;
 using DatabaseMastery.HotCoffeePostgreSQL.Entities;
+using DatabaseMastery.HotCoffeePostgreSQL.Services.Time;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -31,11 +34,25 @@ public sealed class HotCoffeeWebApplicationFactory : WebApplicationFactory<Progr
     public DateTime HiddenReviewCreatedAt { get; private set; }
     public int PendingReservationId { get; private set; }
 
+    public DateTimeOffset FixedUtcNow { get; } =
+        new(2026, 8, 11, 12, 0, 0, TimeSpan.Zero);
+
+    public DateOnly BusinessToday { get; private set; }
+
     private bool _seeded;
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Development");
+
+        builder.ConfigureAppConfiguration((_, configuration) =>
+        {
+            configuration.AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["AdminAuth:Username"] = "factory-admin",
+                ["AdminAuth:Password"] = "factory-password"
+            });
+        });
 
         builder.ConfigureTestServices(services =>
         {
@@ -46,6 +63,13 @@ public sealed class HotCoffeeWebApplicationFactory : WebApplicationFactory<Progr
             services.AddDbContext<AppDbContext>(options =>
                 options.UseInMemoryDatabase(DatabaseName));
 
+            var fixedProvider = new FakeTimeProvider(FixedUtcNow);
+            services.RemoveAll<TimeProvider>();
+            services.AddSingleton<TimeProvider>(fixedProvider);
+            services.RemoveAll<IBusinessClock>();
+            services.AddSingleton<IBusinessClock>(new BusinessClock(fixedProvider));
+            BusinessToday = new BusinessClock(fixedProvider).Today;
+
             services.PostConfigure<AdminAuthOptions>(options =>
             {
                 options.Username = TestUsername;
@@ -55,6 +79,14 @@ public sealed class HotCoffeeWebApplicationFactory : WebApplicationFactory<Progr
             services.PostConfigure<CookieAuthenticationOptions>(AuthSchemes.HotCoffeeAdmin, options =>
             {
                 options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+            });
+
+            services.PostConfigure<RateLimitingOptions>(options =>
+            {
+                options.AdminLoginPermitLimit = 10_000;
+                options.AdminLoginWindowMinutes = 5;
+                options.PublicReservationPermitLimit = 10_000;
+                options.PublicReservationWindowMinutes = 10;
             });
         });
     }
@@ -160,13 +192,19 @@ public sealed class HotCoffeeWebApplicationFactory : WebApplicationFactory<Progr
                 Name = "Pending Guest",
                 Phone = "+905551112233",
                 Email = "guest@example.com",
-                ReservationDate = DateTime.SpecifyKind(DateTime.Today.AddDays(2), DateTimeKind.Utc),
-                ReservationTime = new TimeSpan(19, 0, 0),
+                ReservationDate = BusinessToday.AddDays(2),
+                ReservationTime = new TimeOnly(19, 0),
                 GuestCount = 2,
-                Status = "Beklemede",
+                Status = ReservationStatus.Pending,
                 Description = "Test reservation"
             });
             db.SaveChanges();
+        }
+
+        // Ensure BusinessToday is available even if seed ran before ConfigureTestServices completed clock wiring
+        if (BusinessToday == default)
+        {
+            BusinessToday = new BusinessClock(new FakeTimeProvider(FixedUtcNow)).Today;
         }
 
         CategoryWithProductsId = db.Categories.Single(c => c.CategoryName == "Category A").CategoryId;

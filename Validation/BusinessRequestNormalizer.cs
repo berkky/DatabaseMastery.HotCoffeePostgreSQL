@@ -52,7 +52,6 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Validation
             dto.Phone = TrimToEmpty(dto.Phone);
             dto.Email = TrimToEmpty(dto.Email);
             dto.Description = TrimOptional(dto.Description);
-            dto.Status = TrimToEmpty(dto.Status);
         }
 
         public static void TrimUpdateReservation(UpdateReservationDto dto)
@@ -61,7 +60,6 @@ namespace DatabaseMastery.HotCoffeePostgreSQL.Validation
             dto.Phone = TrimToEmpty(dto.Phone);
             dto.Email = TrimToEmpty(dto.Email);
             dto.Description = TrimOptional(dto.Description);
-            dto.Status = TrimToEmpty(dto.Status);
         }
 
         public static void TrimCreateReview(CreateReviewDto dto)

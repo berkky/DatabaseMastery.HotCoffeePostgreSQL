@@ -1,6 +1,7 @@
-﻿@{
-    var heatData = ViewBag.HeatData as int[,];
-    var maxVal = (int)ViewBag.MaxVal;
+﻿@model DatabaseMastery.HotCoffeePostgreSQL.Dtos.AdminAnalyticsDtos.ReservationHeatmapDto
+@{
+    var heatData = Model.Cells;
+    var maxVal = Model.MaxValue;
     var hrs = new[] { "12:00", "14:00", "16:00", "18:00", "20:00", "22:00" };
     var dys = new[] { "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz" };
     var hmc = new[] { "#fdf5e6", "#fbe8c0", "#f8d48a", "#f5c054", "#e6a03c", "#c8861e", "#a06815" };
@@ -32,8 +33,8 @@
                     {
                         var v = heatData[hr, dy];
                         var ci = maxVal > 0
-                        ? Math.Min((int)Math.Round((double)v / maxVal * (hmc.Length - 1)), hmc.Length - 1)
-                        : 0;
+                            ? Math.Min((int)Math.Round((double)v / maxVal * (hmc.Length - 1)), hmc.Length - 1)
+                            : 0;
                         <div class="hm-cell"
                              style="background:@hmc[ci];"
                              data-tip="@dys[dy] @hrs[hr] — @v rezervasyon">

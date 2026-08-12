@@ -1,0 +1,82 @@
+@using DatabaseMastery.HotCoffeePostgreSQL.Configuration
+@inject Microsoft.Extensions.Options.IOptions<RestaurantBrandOptions> BrandOptions
+@{
+    var brand = BrandOptions.Value;
+    var pageTitle = ViewData["Title"] as string;
+    var fullTitle = string.IsNullOrWhiteSpace(pageTitle)
+        ? $"{brand.BrandName} | Menü ve Rezervasyon"
+        : $"{pageTitle} | {brand.BrandName}";
+    var metaDescription = ViewData["MetaDescription"] as string
+        ?? brand.ShortDescription;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@fullTitle</title>
+    <meta name="description" content="@metaDescription" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="@fullTitle" />
+    <meta property="og:description" content="@metaDescription" />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/hotcoffee-tokens.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/hotcoffee-public.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="hc-public">
+    <script>document.documentElement.classList.add("js");</script>
+    <a class="hc-skip-link" href="#main-content">İçeriğe geç</a>
+
+    <header class="hc-header">
+        <div class="hc-container hc-header-inner">
+            <a class="hc-brand" asp-controller="Menu" asp-action="Index" aria-label="@brand.BrandName ana sayfa">
+                <span class="hc-brand-mark" aria-hidden="true"></span>
+                <span class="hc-brand-text">@brand.BrandName</span>
+            </a>
+
+            <button type="button"
+                    class="hc-nav-toggle"
+                    id="hcNavToggle"
+                    aria-controls="hcPrimaryNav"
+                    aria-expanded="false"
+                    aria-label="Menüyü aç">
+                <span class="hc-nav-toggle-bars" aria-hidden="true"></span>
+            </button>
+
+            <nav id="hcPrimaryNav" class="hc-nav" aria-label="Ana menü">
+                <a class="hc-nav-link" asp-controller="Menu" asp-action="Index">Ana Sayfa</a>
+                <a class="hc-nav-link" href="/#menu">Menü</a>
+                <a class="hc-nav-link" href="/#reviews">Yorumlar</a>
+                <a class="hc-nav-cta" asp-controller="Reservation" asp-action="CreateReservation">Rezervasyon</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="hc-main">
+        @RenderBody()
+    </main>
+
+    <footer class="hc-footer">
+        <div class="hc-container hc-footer-inner">
+            <div class="hc-footer-brand">
+                <div class="hc-brand-text">@brand.BrandName</div>
+                <p>@brand.ShortDescription</p>
+            </div>
+            <nav class="hc-footer-nav" aria-label="Alt menü">
+                <a asp-controller="Menu" asp-action="Index">Ana Sayfa</a>
+                <a href="/#menu">Menü</a>
+                <a href="/#reviews">Yorumlar</a>
+                <a asp-controller="Reservation" asp-action="CreateReservation">Rezervasyon</a>
+            </nav>
+            <p class="hc-footer-copy">&copy; @DateTime.UtcNow.Year @brand.BrandName</p>
+        </div>
+    </footer>
+
+    <script src="~/js/hotcoffee-public.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
