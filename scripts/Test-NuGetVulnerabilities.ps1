@@ -24,7 +24,7 @@ $auditTargets = @(
 $totalVulnerabilities = 0
 
 foreach ($target in $auditTargets) {
-    $outputFile = Join-Path $env:TEMP ("hotcoffee-vulnerable-{0}.json" -f $target.Name)
+    $outputFile = Join-Path ([System.IO.Path]::GetTempPath()) ("hotcoffee-vulnerable-{0}.json" -f $target.Name)
 
     dotnet list $target.Path package --vulnerable --include-transitive --format json --output-version 1 |
         Out-File -FilePath $outputFile -Encoding utf8
